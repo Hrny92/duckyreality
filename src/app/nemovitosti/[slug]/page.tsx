@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     // Build OG image URL from Sanity if available, otherwise fallback
     let ogImage = '/og-image.png'
-    if (property.images?.[0]) {
+    if (property.mainImage) {
       try {
-        ogImage = urlFor(property.images[0]).width(1200).height(630).fit('crop').url()
+        ogImage = urlFor(property.mainImage).width(1200).height(630).fit('crop').url()
       } catch { /* keep fallback */ }
     }
 
@@ -76,9 +76,9 @@ export default async function Page({ params }: Props) {
 
   // Build property schema input
   let imageUrl: string | undefined
-  if (property.images?.[0]) {
+  if (property.mainImage) {
     try {
-      imageUrl = urlFor(property.images[0]).width(1200).height(630).fit('crop').url()
+      imageUrl = urlFor(property.mainImage).width(1200).height(630).fit('crop').url()
     } catch { /* keep undefined */ }
   }
 
