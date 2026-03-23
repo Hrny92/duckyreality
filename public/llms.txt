@@ -1,0 +1,59 @@
+# Marek Ducký — Realitní makléř
+
+> Profesionální realitní makléř působící v Litoměřicích, Praze a po celé České republice.
+> Člen sítě Bidli | IČ: 07637276
+
+## O osobě
+
+Marek Ducký je zkušený realitní makléř s více než 12 lety praxe na českém realitním trhu.
+Specializuje se na prodej, koupi a pronájem nemovitostí v regionu Litoměřicko a v Praze.
+Jako člen sítě Bidli zajišťuje kompletní realitní servis po celé České republice.
+
+- Jméno: Marek Ducký
+- Profese: Realitní makléř
+- Společnost: Bidli
+- Telefon: +420 728 111 836
+- E-mail: marek.ducky@bidli.cz
+- Lokality: Litoměřice, Litoměřicko, Praha, celá ČR
+
+## Nabízené služby
+
+- Prodej nemovitostí (byty, domy, pozemky, komerční prostory)
+- Koupě nemovitostí — zastupování kupující strany
+- Pronájem nemovitostí (dlouhodobý i krátkodobý)
+- Ocenění nemovitostí
+- Poradenství při hypotečním financování
+- Kompletní smluvní agenda a právní servis
+- Profesionální fotodokumentace a home staging
+- Virtuální prohlídky (3D Matterport)
+
+## Územní působnost
+
+Primárně: Litoměřice a Litoměřicko (Ústecký kraj)
+Sekundárně: Praha a Středočeský kraj
+Celostátně: Česká republika (síť Bidli)
+
+## Zákaznické reference
+
+Marek Ducký má 25+ ověřených recenzí s průměrným hodnocením 5/5.
+Klienti oceňují: profesionální přístup, rychlost jednání, transparentní komunikaci,
+znalost lokálního trhu a spolehlivost při sjednávání smluv.
+
+## Kontakt a konzultace
+
+Úvodní konzultace je bezplatná.
+Web: https://duckyreality.cz
+Telefon: +420 728 111 836
+E-mail: marek.ducky@bidli.cz
+Instagram: https://www.instagram.com/marek_ducky
+Facebook: https://www.facebook.com/marekducky
+LinkedIn: https://www.linkedin.com/in/marek-ducky
+
+## Mapa webu
+
+- / — Hlavní stránka (O mně, nabídka, proč se mnou, služby, reference, kontakt)
+- /nemovitosti — Aktuální nabídka nemovitostí s filtrem
+- /nemovitosti/[slug] — Detail inzerátu nemovitosti
+- /gdpr — Ochrana osobních údajů
+- /sitemap.xml — XML sitemap
+- /robots.txt — Pravidla pro crawlery

@@ -1,0 +1,74 @@
+# robots.txt — duckyreality.cz
+# Realitní makléř Marek Ducký | Bidli
+
+# ── Standard crawlers ─────────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /studio/
+
+# ── Google ────────────────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bing ─────────────────────────────────────────────────────────────────────
+User-agent: bingbot
+Allow: /
+Disallow: /api/
+Crawl-delay: 2
+
+# ── Seznam (CZ search engine) ─────────────────────────────────────────────────
+User-agent: SeznamBot
+Allow: /
+Disallow: /api/
+Crawl-delay: 2
+
+# ── AI / LLM crawlers — explicitly allow for GEO visibility ──────────────────
+
+# OpenAI — ChatGPT search, Bing AI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI (Llama)
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Common
+User-agent: CCBot
+Allow: /
+
+# ── Sitemap ───────────────────────────────────────────────────────────────────
+Sitemap: https://duckyreality.cz/sitemap.xml
