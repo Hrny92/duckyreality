@@ -178,6 +178,33 @@ ul, ol {
   box-shadow: 0 16px 48px rgba(233,78,27,0.06);
 }
 
+/* ─── Animations ─── */
+
+/* Hero entrance — triggered by class on page load */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroScaleIn {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1); }
+}
+@keyframes scrollBob {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50%       { transform: translateY(6px); opacity: 0.5; }
+}
+
+/* Reusable utility: element fades in on load (use with animation-delay) */
+.hero-in {
+  animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-scale-in {
+  animation: heroScaleIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.scroll-bob {
+  animation: scrollBob 2.2s ease-in-out infinite;
+}
+
 /* ─── Navbar transition ─── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;

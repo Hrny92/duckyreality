@@ -1,4 +1,7 @@
 'use client'
+import Counter from '@/components/Counter'
+
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)'
 
 export default function Hero() {
   return (
@@ -10,11 +13,12 @@ export default function Hero() {
         flexDirection: 'column',
         justifyContent: 'flex-end',
         overflow: 'hidden',
-        backgroundColor: '#001a29', // fallback kd. obrázek není
+        backgroundColor: '#001a29',
       }}
     >
-      {/* ── Pozadí – fotka ── */}
+      {/* ── Pozadí – fotka s entrance scale ── */}
       <div
+        className="hero-scale-in"
         style={{
           position: 'absolute',
           inset: 0,
@@ -25,7 +29,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Tmavý přechod přes fotku – dole silnější ── */}
+      {/* ── Tmavý přechod ── */}
       <div
         style={{
           position: 'absolute',
@@ -34,9 +38,6 @@ export default function Hero() {
             'linear-gradient(to bottom, rgba(0,26,41,0.0) 30%, rgba(0,26,41,0.5) 80%, rgba(0,26,41,0.93) 100%)',
         }}
       />
-
-      {/* ── Jemná textura grain ── */}
-      
 
       {/* ── Obsah ── */}
       <div
@@ -49,9 +50,11 @@ export default function Hero() {
           width: '100%',
         }}
       >
-        {/* Makléř / firma */}
+        {/* Makléř / firma — delay 150ms */}
         <div
+          className="hero-in"
           style={{
+            animationDelay: '0.15s',
             display: 'flex',
             alignItems: 'center',
             gap: '0.875rem',
@@ -60,13 +63,7 @@ export default function Hero() {
         >
           <div
             className="pulse"
-            style={{
-              width: 6,
-              height: 6,
-              borderRadius: '50%',
-              background: '#e94e1b',
-              flexShrink: 0,
-            }}
+            style={{ width: 6, height: 6, borderRadius: '50%', background: '#e94e1b', flexShrink: 0 }}
           />
           <span
             className="eyebrow"
@@ -79,17 +76,16 @@ export default function Hero() {
             }}
           >
             Realitní makléř&nbsp;·
-            <img
-              src="/Bidli-logo-wh.svg"
-              alt="Bidli"
-              style={{ height: 24, width: 'auto', opacity: 1, display: 'inline-block' }}
-            />
+            <img src="/Bidli-logo-wh.svg" alt="Bidli"
+              style={{ height: 24, width: 'auto', opacity: 1, display: 'inline-block' }} />
           </span>
         </div>
 
-        {/* Hlavní jméno */}
+        {/* "Marek" — delay 300ms */}
         <h1
+          className="hero-in"
           style={{
+            animationDelay: '0.3s',
             fontSize: 'clamp(4rem, 11vw, 9.5rem)',
             fontWeight: 900,
             lineHeight: 0.9,
@@ -100,8 +96,12 @@ export default function Hero() {
         >
           Marek
         </h1>
+
+        {/* "Ducký." — delay 440ms */}
         <h1
+          className="hero-in"
           style={{
+            animationDelay: '0.44s',
             fontSize: 'clamp(4rem, 11vw, 9.5rem)',
             fontWeight: 900,
             lineHeight: 0.9,
@@ -112,9 +112,11 @@ export default function Hero() {
           <span className="orange-word">Ducký.</span>
         </h1>
 
-        {/* Spodní lišta */}
+        {/* ── Spodní lišta — delay 620ms ── */}
         <div
+          className="hero-in"
           style={{
+            animationDelay: '0.62s',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
@@ -143,77 +145,49 @@ export default function Hero() {
             <a
               href="#nabidka"
               style={{
-                background: '#e94e1b',
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: '0.75rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                padding: '0.9rem 2rem',
-                borderRadius: 999,
-                textDecoration: 'none',
-                transition: 'all 0.25s',
+                background: '#e94e1b', color: '#fff', fontWeight: 700,
+                fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                padding: '0.9rem 2rem', borderRadius: 999, textDecoration: 'none',
+                transition: `all 0.25s ${EASE}`,
               }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.background = '#d63e0d'
-                el.style.transform = 'translateY(-2px)'
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.background = '#e94e1b'
-                el.style.transform = 'translateY(0)'
-              }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#d63e0d'; el.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#e94e1b'; el.style.transform = 'translateY(0)' }}
             >
               Prohlédnout nabídku
             </a>
             <a
               href="#o-mne"
               style={{
-                border: '1px solid rgba(255,255,255,0.25)',
-                color: 'rgba(255,255,255,0.75)',
-                fontWeight: 600,
-                fontSize: '0.75rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                padding: '0.9rem 2rem',
-                borderRadius: 999,
-                textDecoration: 'none',
-                transition: 'all 0.25s',
+                border: '1px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.75)',
+                fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+                padding: '0.9rem 2rem', borderRadius: 999, textDecoration: 'none',
+                transition: `all 0.25s ${EASE}`,
               }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.borderColor = 'rgba(255,255,255,0.6)'
-                el.style.color = '#fff'
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.borderColor = 'rgba(255,255,255,0.25)'
-                el.style.color = 'rgba(255,255,255,0.75)'
-              }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.6)'; el.style.color = '#fff' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.25)'; el.style.color = 'rgba(255,255,255,0.75)' }}
             >
               O mně
             </a>
           </div>
 
-          {/* Statistiky */}
+          {/* Statistiky — čísla nabíhají jako counter */}
           <div style={{ display: 'flex', gap: '2.5rem' }}>
             {[
-              { n: '150+', l: 'obchodů' },
-              { n: '12',   l: 'let praxe' },
-              { n: '98%',  l: 'spokojenost' },
+              { to: 150, suffix: '+', label: 'obchodů' },
+              { to: 12,  suffix: '',  label: 'let praxe' },
+              { to: 98,  suffix: '%', label: 'spokojenost' },
             ].map(s => (
-              <div key={s.n}>
+              <div key={s.label}>
                 <div
                   style={{
-                    fontSize: 'clamp(1.6rem,3vw,2.2rem)',
+                    fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
                     fontWeight: 900,
                     color: '#fff',
                     lineHeight: 1,
                     letterSpacing: '-0.03em',
                   }}
                 >
-                  {s.n}
+                  <Counter to={s.to} suffix={s.suffix} duration={1600} delay={800} />
                 </div>
                 <div
                   style={{
@@ -225,7 +199,7 @@ export default function Hero() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  {s.l}
+                  {s.label}
                 </div>
               </div>
             ))}
@@ -233,8 +207,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Scroll indikátor ── */}
+      {/* ── Scroll indikátor — delay 1.4s, pak plynulý bob ── */}
       <div
+        className="scroll-bob"
         style={{
           position: 'absolute',
           bottom: '2rem',
@@ -243,20 +218,12 @@ export default function Hero() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: '0.5rem',
-          opacity: 0.3,
+          animation: 'heroIn 0.7s cubic-bezier(0.22,1,0.36,1) both 1.4s, scrollBob 2.2s ease-in-out infinite 2.2s',
+          opacity: 0,    /* heroIn přebírá řízení */
         }}
       >
-        <div
-          style={{
-            width: 1,
-            height: 48,
-            background: 'linear-gradient(to bottom, #fff, transparent)',
-          }}
-        />
-        <span
-          className="eyebrow"
-          style={{ color: '#fff', fontSize: '0.55rem', writingMode: 'vertical-rl' }}
-        >
+        <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, #fff, transparent)' }} />
+        <span className="eyebrow" style={{ color: '#fff', fontSize: '0.55rem', writingMode: 'vertical-rl' }}>
           scroll
         </span>
       </div>
