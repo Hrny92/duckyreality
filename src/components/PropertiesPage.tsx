@@ -320,14 +320,12 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
         style={{ textDecoration: 'none', display: 'block' }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}>
-        <div style={{ display: 'grid',
-          gridTemplateColumns: '44px 80px 1fr auto auto auto auto',
-          gap: '1.5rem', alignItems: 'center', padding: '1.75rem 0',
+        <div className="prop-row" style={{
           paddingLeft: hovered ? '0.75rem' : '0',
-          cursor: 'pointer', transition: 'padding-left 0.25s ease' }}>
+        }}>
 
           {/* Index */}
-          <span style={{ fontSize: '0.68rem', fontWeight: 700,
+          <span className="prop-col-index" style={{ fontSize: '0.68rem', fontWeight: 700,
             color: 'rgba(0,43,64,0.2)', fontVariantNumeric: 'tabular-nums' }}>
             {String(index + 1).padStart(2, '0')}
           </span>
@@ -365,7 +363,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
           </div>
 
           {/* Type pill */}
-          <div style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 800,
+          <div className="prop-col-type" style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 800,
             letterSpacing: '0.1em', textTransform: 'uppercase', borderRadius: 999,
             padding: '0.3rem 0.75rem',
             background: p.transactionType === 'prodej' ? 'rgba(233,78,27,0.1)' : 'rgba(0,43,64,0.07)',
@@ -374,13 +372,13 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
           </div>
 
           {/* Category */}
-          <div style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 700,
+          <div className="prop-col-cat" style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 700,
             color: 'rgba(0,43,64,0.35)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
             {CATEGORY_LABELS[p.category] ?? p.category}
           </div>
 
           {/* Status */}
-          <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <div className="prop-col-status" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
             <div style={{ width: 5, height: 5, borderRadius: '50%', background: statusColor, flexShrink: 0 }} />
             <span style={{ fontSize: '0.68rem', fontWeight: 700,
               color: status === 'active' ? 'rgba(0,43,64,0.4)' : statusColor,
@@ -390,7 +388,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
           </div>
 
           {/* Price */}
-          <div style={{ textAlign: 'right', flexShrink: 0, minWidth: 170 }}>
+          <div className="prop-col-price" style={{ textAlign: 'right', flexShrink: 0, minWidth: 170 }}>
             <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#002b40',
               letterSpacing: '-0.02em',
               opacity: status === 'sold' ? 0.3 : 1 }}>

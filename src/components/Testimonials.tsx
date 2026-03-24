@@ -61,7 +61,7 @@ export default function Testimonials() {
           </span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'stretch' }}>
+        <div className="testimonials-grid">
 
           {/* ── Levý panel — aktivní citace ── */}
           <div style={{ position: 'sticky', top: '7rem', alignSelf: 'start' }}>
@@ -132,7 +132,7 @@ export default function Testimonials() {
           </div>
 
           {/* ── Pravý panel — scrollovatelný seznam ── */}
-          <div style={{ position: 'relative' }}>
+          <div className="testimonials-list-panel" style={{ position: 'relative' }}>
           <div
             ref={listRef}
             style={{ position: 'absolute', inset: 0, overflowY: 'auto', paddingRight: '0.5rem',

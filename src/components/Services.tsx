@@ -54,13 +54,10 @@ export default function Services() {
           <Reveal key={s.n} direction="up" delay={0} duration={700}>
             <div>
               <div style={{ height: 1, background: 'rgba(0,43,64,0.08)' }} />
-              <div style={{
-                display: 'grid', gridTemplateColumns: '80px 1fr 1fr',
-                gap: '3rem', padding: '3.5rem 0', alignItems: 'start',
-              }}>
+              <div className="service-row">
 
                 {/* Number */}
-                <div style={{
+                <div className="service-num" style={{
                   fontSize: '0.7rem', fontWeight: 700, color: 'rgba(0,43,64,0.25)',
                   letterSpacing: '0.1em', paddingTop: '0.3rem',
                 }}>

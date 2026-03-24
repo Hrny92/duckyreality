@@ -114,17 +114,8 @@ export default function Hero() {
 
         {/* ── Spodní lišta — delay 620ms ── */}
         <div
-          className="hero-in"
-          style={{
-            animationDelay: '0.62s',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '2rem',
-            paddingTop: '2rem',
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-          }}
+          className="hero-bottom hero-in"
+          style={{ animationDelay: '0.62s' }}
         >
           {/* Perex */}
           <p
@@ -171,7 +162,7 @@ export default function Hero() {
           </div>
 
           {/* Statistiky — čísla nabíhají jako counter */}
-          <div style={{ display: 'flex', gap: '2.5rem' }}>
+          <div className="hero-stats">
             {[
               { to: 150, suffix: '+', label: 'obchodů' },
               { to: 12,  suffix: '',  label: 'let praxe' },

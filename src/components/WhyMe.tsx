@@ -32,13 +32,14 @@ export default function WhyMe() {
         </Reveal>
 
         {/* Grid — každá karta se nabíhá s offset */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0' }}>
+        <div className="why-grid">
           {items.map((item, i) => {
             const isLastRow = i >= 3
             const isRightCol = (i % 3) === 2
             return (
               <Reveal key={item.n} direction="scale" delay={i * 75} duration={600}>
                 <div
+                  className="why-item"
                   style={{
                     padding: '2.5rem', position: 'relative', height: '100%',
                     borderRight: isRightCol ? 'none' : '1px solid rgba(0,43,64,0.07)',

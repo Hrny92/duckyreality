@@ -17,20 +17,14 @@ export default function AboutMe() {
         </Reveal>
 
         {/* Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '6rem',
-            alignItems: 'stretch',
-          }}
-        >
+        <div className="about-grid">
           {/* Levý sloupec — foto přijíždí zleva (Reveal je grid cell) */}
           <Reveal
             direction="left"
             delay={0}
             duration={800}
-            style={{ borderRadius: '2rem', overflow: 'hidden', position: 'relative', minHeight: 400 }}
+            className="about-photo"
+          style={{ borderRadius: '2rem', overflow: 'hidden', position: 'relative', minHeight: 400 }}
           >
             <div style={{ position: 'absolute', inset: 0 }}>
               <img
