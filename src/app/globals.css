@@ -324,6 +324,19 @@ ul, ol {
   .hero-scroll-indicator { display: none !important; }
 }
 
+/* ─── Hero background: no photo on portrait mobile, navy + orange pattern ─── */
+@media (max-width: 640px) and (orientation: portrait) {
+  .hero-bg {
+    background-image:
+      radial-gradient(ellipse 70% 55% at 90% -5%,  rgba(233,78,27,0.45) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 10% 100%, rgba(233,78,27,0.15) 0%, transparent 60%),
+      radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px) !important;
+    background-size: auto, auto, 26px 26px !important;
+    background-color: #001220 !important;
+    background-position: top right, bottom left, 0 0 !important;
+  }
+}
+
 /* ─── CTA: button full-width left on mobile ─── */
 @media (max-width: 768px) {
   .cta-btn-wrap { margin-left: 0 !important; width: 100%; }

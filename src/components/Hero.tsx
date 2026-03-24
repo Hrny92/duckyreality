@@ -19,7 +19,7 @@ export default function Hero() {
     >
       {/* ── Pozadí – fotka s entrance scale ── */}
       <div
-        className="hero-scale-in"
+        className="hero-scale-in hero-bg"
         style={{
           position: 'absolute',
           inset: 0,
