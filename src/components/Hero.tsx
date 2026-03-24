@@ -6,6 +6,7 @@ const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)'
 export default function Hero() {
   return (
     <section
+      className="hero-section"
       style={{
         position: 'relative',
         minHeight: '100svh',
@@ -73,6 +74,7 @@ export default function Hero() {
               display: 'flex',
               alignItems: 'center',
               gap: '0.6rem',
+              whiteSpace: 'nowrap',
             }}
           >
             Realitní makléř&nbsp;·
@@ -148,6 +150,7 @@ export default function Hero() {
             </a>
             <a
               href="#o-mne"
+              className="hero-btn-omne"
               style={{
                 border: '1px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.75)',
                 fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase',
@@ -200,7 +203,7 @@ export default function Hero() {
 
       {/* ── Scroll indikátor — delay 1.4s, pak plynulý bob ── */}
       <div
-        className="scroll-bob"
+        className="scroll-bob hero-scroll-indicator"
         style={{
           position: 'absolute',
           bottom: '2rem',

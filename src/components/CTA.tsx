@@ -62,7 +62,7 @@ export default function CTA() {
             ))}
 
             {/* CTA button */}
-            <div style={{ marginLeft: 'auto', alignSelf: 'center' }}>
+            <div className="cta-btn-wrap" style={{ marginLeft: 'auto', alignSelf: 'center' }}>
               <button onClick={openContactModal}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.875rem',

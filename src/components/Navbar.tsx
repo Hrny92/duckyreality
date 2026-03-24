@@ -30,6 +30,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   // Barvy podle stavu scrollu
   const linkColor     = scrolled ? '#002b40'              : 'rgba(255,255,255,0.85)'
   const linkHover     = '#e94e1b'
@@ -43,136 +49,167 @@ export default function Navbar() {
   const logoFilter    = scrolled ? 'none'                 : 'brightness(0) invert(1)'
 
   return (
-    <header
-      className={`navbar${scrolled ? ' scrolled' : ''}`}
-      style={{ padding: scrolled ? '1rem 0' : '1.75rem 0' }}
-    >
-      <div style={{
-        maxWidth: 1280, margin: '0 auto', padding: '0 2rem',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      }}>
+    <>
+      <header
+        className={`navbar${scrolled ? ' scrolled' : ''}`}
+        style={{ padding: scrolled ? '1rem 0' : '1.75rem 0' }}
+      >
+        <div style={{
+          maxWidth: 1280, margin: '0 auto', padding: '0 2rem',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        }}>
 
-        {/* ── Logo ── */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          <img
-            src="/logo.svg"
-            alt="Ducky Realit"
-            style={{
-              height: 28, width: 'auto',
-              filter: logoFilter,
-              transition: 'filter 0.4s ease',
-            }}
-          />
-        </a>
-
-        {/* ── Desktop nav ── */}
-        <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '2.5rem' }}>
-          {links.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
+          {/* ── Logo ── */}
+          <a href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+            <img
+              src="/logo.svg"
+              alt="Ducky Realit"
               style={{
-                fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em',
-                color: linkColor, textDecoration: 'none',
-                transition: 'color 0.25s',
+                height: 28, width: 'auto',
+                filter: open ? 'brightness(0) invert(1)' : logoFilter,
+                transition: 'filter 0.4s ease',
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = linkHover)}
-              onMouseLeave={e => (e.currentTarget.style.color = linkLeave)}
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+            />
+          </a>
 
-        {/* ── CTA tlačítko ── */}
-        <button
-          onClick={openContactModal}
-          className="hidden md:inline-flex"
-          style={{
-            background: ctaBg,
-            border: ctaBorder,
-            color: ctaColor,
-            fontSize: '0.75rem', fontWeight: 700,
-            letterSpacing: '0.08em', textTransform: 'uppercase',
-            padding: '0.65rem 1.5rem', borderRadius: 999,
-            cursor: 'pointer',
-            transition: 'background 0.25s, transform 0.2s, border-color 0.25s',
-            backdropFilter: scrolled ? 'none' : 'blur(8px)',
-          }}
-          onMouseEnter={e => {
-            const el = e.currentTarget as HTMLElement
-            el.style.background = ctaHoverBg
-            el.style.transform   = 'scale(1.03)'
-          }}
-          onMouseLeave={e => {
-            const el = e.currentTarget as HTMLElement
-            el.style.background = ctaBg
-            el.style.transform   = 'scale(1)'
-          }}
-        >
-          Kontakt
-        </button>
-
-        {/* ── Hamburger ── */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden"
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8 }}
-          aria-label="Menu"
-        >
-          <div style={{ width: 22, display: 'flex', flexDirection: 'column', gap: 5 }}>
-            {[
-              open ? 'rotate(45deg) translateY(6.5px)' : 'none',
-              '',
-              open ? 'rotate(-45deg) translateY(-6.5px)' : 'none',
-            ].map((transform, i) => (
-              <span
-                key={i}
+          {/* ── Desktop nav ── */}
+          <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '2.5rem' }}>
+            {links.map(l => (
+              <a
+                key={l.href}
+                href={l.href}
                 style={{
-                  display: 'block', height: 1.5,
-                  background: burgerColor,
-                  transition: 'all 0.3s, background 0.4s',
-                  transform: transform || 'none',
-                  opacity: i === 1 && open ? 0 : 1,
+                  fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em',
+                  color: linkColor, textDecoration: 'none',
+                  transition: 'color 0.25s',
                 }}
-              />
+                onMouseEnter={e => (e.currentTarget.style.color = linkHover)}
+                onMouseLeave={e => (e.currentTarget.style.color = linkLeave)}
+              >
+                {l.label}
+              </a>
             ))}
-          </div>
-        </button>
-      </div>
+          </nav>
 
-      {/* ── Mobile menu (vždy bílé pozadí) ── */}
-      <div style={{
-        overflow: 'hidden',
-        maxHeight: open ? 420 : 0,
-        transition: 'max-height 0.4s ease',
-        background: '#fff',
-        borderTop: open ? '1px solid rgba(0,43,64,0.06)' : 'none',
-      }}>
-        <div style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          {links.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              style={{ fontSize: '1rem', fontWeight: 600, color: '#002b40', textDecoration: 'none' }}
-            >
-              {l.label}
-            </a>
-          ))}
+          {/* ── CTA tlačítko ── */}
           <button
-            onClick={() => { setOpen(false); openContactModal() }}
+            onClick={openContactModal}
+            className="hidden md:inline-flex"
             style={{
-              background: '#e94e1b', color: '#fff', textAlign: 'center',
-              padding: '0.875rem', borderRadius: 999, fontWeight: 700,
-              fontSize: '0.8rem', border: 'none', cursor: 'pointer', width: '100%',
-              letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: '0.5rem',
+              background: ctaBg,
+              border: ctaBorder,
+              color: ctaColor,
+              fontSize: '0.75rem', fontWeight: 700,
+              letterSpacing: '0.08em', textTransform: 'uppercase',
+              padding: '0.65rem 1.5rem', borderRadius: 999,
+              cursor: 'pointer',
+              transition: 'background 0.25s, transform 0.2s, border-color 0.25s',
+              backdropFilter: scrolled ? 'none' : 'blur(8px)',
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLElement
+              el.style.background = ctaHoverBg
+              el.style.transform   = 'scale(1.03)'
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLElement
+              el.style.background = ctaBg
+              el.style.transform   = 'scale(1)'
             }}
           >
             Kontakt
           </button>
+
+          {/* ── Hamburger ── */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden"
+            style={{
+              background: 'none', border: 'none', cursor: 'pointer',
+              padding: 8, zIndex: 110, position: 'relative',
+            }}
+            aria-label="Menu"
+          >
+            <div style={{ width: 22, display: 'flex', flexDirection: 'column', gap: 5 }}>
+              {[
+                open ? 'rotate(45deg) translateY(6.5px)' : 'none',
+                '',
+                open ? 'rotate(-45deg) translateY(-6.5px)' : 'none',
+              ].map((transform, i) => (
+                <span
+                  key={i}
+                  style={{
+                    display: 'block', height: 1.5,
+                    background: open ? '#ffffff' : burgerColor,
+                    transition: 'all 0.3s, background 0.3s',
+                    transform: transform || 'none',
+                    opacity: i === 1 && open ? 0 : 1,
+                  }}
+                />
+              ))}
+            </div>
+          </button>
+        </div>
+      </header>
+
+      {/* ── Mobile menu — full screen, slides in from right ── */}
+      <div
+        className={`mobile-nav${open ? ' mobile-nav--open' : ''}`}
+        aria-hidden={!open}
+      >
+        {/* Background accent glow */}
+        <div style={{
+          position: 'absolute', bottom: '-10%', right: '-10%',
+          width: '60vw', height: '60vw', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(233,78,27,0.12) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+
+        <div className="mobile-nav__inner">
+
+          {/* Nav links */}
+          <nav className="mobile-nav__links">
+            {links.map((l, i) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="mobile-nav__link"
+                style={{ transitionDelay: open ? `${0.12 + i * 0.06}s` : '0s' }}
+              >
+                <span className="mobile-nav__num">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="mobile-nav__label">{l.label}</span>
+                <svg className="mobile-nav__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            ))}
+          </nav>
+
+          {/* Footer */}
+          <div
+            className="mobile-nav__footer"
+            style={{ transitionDelay: open ? `${0.12 + links.length * 0.06}s` : '0s' }}
+          >
+            <button
+              onClick={() => { setOpen(false); openContactModal() }}
+              className="mobile-nav__cta"
+            >
+              Napsat zprávu
+            </button>
+            <div className="mobile-nav__contact">
+              <a href="tel:+420728111836" className="mobile-nav__phone">
+                +420 728 111 836
+              </a>
+              <a href="mailto:marek.ducky@bidli.cz" className="mobile-nav__email">
+                marek.ducky@bidli.cz
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </>
   )
 }
