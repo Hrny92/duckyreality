@@ -31,7 +31,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="sluzby" style={{ background: '#141414', padding: '8rem 0' }}>
+    <section id="sluzby" style={{ background: '#0A0A0A', padding: '8rem 0' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Header */}
@@ -66,7 +66,7 @@ export default function Services() {
 
                 {/* Title + desc */}
                 <div>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#111111',
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#fff',
                     letterSpacing: '-0.02em', marginBottom: '1rem' }}>
                     {s.title}
                   </h3>

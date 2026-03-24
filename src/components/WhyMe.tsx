@@ -51,7 +51,7 @@ export default function WhyMe() {
                 >
                   {/* Big number */}
                   <div style={{
-                    fontSize: '4rem', fontWeight: 900, color: 'rgba(255,255,255,0.06)',
+                    fontSize: '4rem', fontWeight: 900, color: 'rgba(212,175,55,0.18)',
                     lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '1.5rem',
                     transition: 'color 0.3s',
                   }}>

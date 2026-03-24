@@ -80,13 +80,14 @@ export default function Testimonials() {
             {/* Autor */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <div style={{ width: 44, height: 44, borderRadius: '50%',
-                background: '#111111', display: 'flex', alignItems: 'center',
+                background: 'rgba(212,175,55,0.15)', border: '1px solid rgba(212,175,55,0.3)',
+                display: 'flex', alignItems: 'center',
                 justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700,
-                color: '#fff', flexShrink: 0 }}>
+                color: '#D4AF37', flexShrink: 0 }}>
                 {initials(r.name)}
               </div>
               <div>
-                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#111111' }}>{r.name}</div>
+                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#fff' }}>{r.name}</div>
                 <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)',
                   fontWeight: 500, marginTop: '0.1rem' }}>{r.date}</div>
               </div>
@@ -106,7 +107,7 @@ export default function Testimonials() {
                 style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)',
                   background: 'none', cursor: active === 0 ? 'default' : 'pointer', display: 'flex',
                   alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s',
-                  opacity: active === 0 ? 0.25 : 1, color: '#111111' }}
+                  opacity: active === 0 ? 0.25 : 1, color: 'rgba(255,255,255,0.7)' }}
                 onMouseEnter={e => { if (active > 0) { (e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.12)'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='rgba(255,255,255,0.6)' }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -117,7 +118,7 @@ export default function Testimonials() {
                 style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.15)',
                   background: 'none', cursor: active === reviews.length - 1 ? 'default' : 'pointer',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s',
-                  opacity: active === reviews.length - 1 ? 0.25 : 1, color: '#111111' }}
+                  opacity: active === reviews.length - 1 ? 0.25 : 1, color: 'rgba(255,255,255,0.7)' }}
                 onMouseEnter={e => { if (active < reviews.length - 1) { (e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.12)'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='rgba(255,255,255,0.6)' }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -193,7 +194,7 @@ export default function Testimonials() {
           marginTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
           {[['98%','spokojenost klientů'], ['150+','úspěšných obchodů'], ['25','ověřených recenzí']].map(([n,l]) => (
             <div key={l}>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#111111',
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#fff',
                 letterSpacing: '-0.03em', lineHeight: 1 }}>{n}</div>
               <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)',
                 textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '0.3rem' }}>{l}</div>

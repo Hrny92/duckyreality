@@ -122,11 +122,11 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
       </section>
 
       {/* ── MAIN CONTENT ────────────────────────────────────── */}
-      <section style={{ background: '#141414', minHeight: '60vh', paddingBottom: '8rem' }}>
+      <section style={{ background: '#0A0A0A', minHeight: '60vh', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
           {/* ── FILTER BAR ──────────────────────────── */}
-          <div style={{ position: 'sticky', top: 64, zIndex: 40, background: '#141414',
+          <div style={{ position: 'sticky', top: 64, zIndex: 40, background: '#0A0A0A',
             paddingTop: '2rem', paddingBottom: '1.5rem',
             borderBottom: '1px solid rgba(255,255,255,0.08)',
             marginBottom: '3rem' }}>

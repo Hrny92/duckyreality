@@ -5,7 +5,7 @@ import Counter from '@/components/Counter'
 
 export default function AboutMe() {
   return (
-    <section id="o-mne" style={{ background: '#141414', padding: '8rem 0', overflow: 'hidden' }}>
+    <section id="o-mne" style={{ background: '#0A0A0A', padding: '8rem 0', overflow: 'hidden' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Eyebrow */}
