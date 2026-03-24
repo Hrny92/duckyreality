@@ -45,7 +45,7 @@ function Gallery({ images }: { images: SanityProperty['gallery'] }) {
         {images.map((img, i) => (
           <button key={i} onClick={() => setActive(i)}
             style={{ border: 'none', padding: 0, cursor: 'pointer', borderRadius: '0.75rem',
-              overflow: 'hidden', aspectRatio: '4/3', background: 'rgba(17,17,17,0.06)',
+              overflow: 'hidden', aspectRatio: '4/3', background: 'rgba(255,255,255,0.06)',
               display: 'block', width: '100%' }}>
             <img
               src={urlFor(img).width(400).height(300).fit('crop').url()}
@@ -115,7 +115,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
   const transLabel  = TRANSACTION_LABELS[p.transactionType] ?? ''
   const catLabel    = CATEGORY_LABELS[p.category] ?? ''
   const statusLabel = STATUS_LABELS[p.status] ?? ''
-  const statusColor = STATUS_COLORS[p.status] ?? 'rgba(17,17,17,0.2)'
+  const statusColor = STATUS_COLORS[p.status] ?? 'rgba(255,255,255,0.2)'
 
   const stats = [
     { label: 'Cena',       value: p.price },
@@ -189,7 +189,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
           {/* ── TITLE + PRICE HEADER ─────────────── */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto',
             gap: '2rem', alignItems: 'flex-start',
-            padding: '3rem 0 2.5rem', borderBottom: '1px solid rgba(17,17,17,0.08)',
+            padding: '3rem 0 2.5rem', borderBottom: '1px solid rgba(255,255,255,0.08)',
             flexWrap: 'wrap' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem',
@@ -197,16 +197,16 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                 {/* Transaction pill */}
                 <span style={{ fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.12em',
                   textTransform: 'uppercase', borderRadius: 999, padding: '0.25rem 0.7rem',
-                  background: p.transactionType === 'prodej' ? 'rgba(201,165,66,0.1)' : 'rgba(17,17,17,0.07)',
-                  color: p.transactionType === 'prodej' ? '#C9A542' : 'rgba(17,17,17,0.5)' }}>
+                  background: p.transactionType === 'prodej' ? 'rgba(212,175,55,0.1)' : 'rgba(255,255,255,0.07)',
+                  color: p.transactionType === 'prodej' ? '#D4AF37' : 'rgba(255,255,255,0.5)' }}>
                   {transLabel}
                 </span>
                 <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em',
-                  textTransform: 'uppercase', color: 'rgba(17,17,17,0.3)' }}>
+                  textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)' }}>
                   {catLabel}
                 </span>
-                <span style={{ color: 'rgba(17,17,17,0.2)' }}>·</span>
-                <span style={{ fontSize: '0.75rem', color: 'rgba(17,17,17,0.45)', fontWeight: 500 }}>
+                <span style={{ color: 'rgba(255,255,255,0.2)' }}>·</span>
+                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
                   {p.location}
                 </span>
               </div>
@@ -223,14 +223,14 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                 {p.price}
               </div>
               <button onClick={openContactModal}
-                style={{ marginTop: '1rem', background: '#C9A542', color: '#fff',
+                style={{ marginTop: '1rem', background: '#D4AF37', color: '#fff',
                   border: 'none', borderRadius: 999, padding: '0.75rem 1.75rem',
                   fontSize: '0.75rem', fontWeight: 800, cursor: 'pointer',
                   letterSpacing: '0.08em', textTransform: 'uppercase',
-                  transition: 'all 0.25s', boxShadow: '0 0 24px rgba(201,165,66,0.25)',
+                  transition: 'all 0.25s', boxShadow: '0 0 24px rgba(212,175,55,0.25)',
                   display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#B8922F'; el.style.transform='translateY(-2px)' }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#C9A542'; el.style.transform='translateY(0)' }}>
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#B8960D'; el.style.transform='translateY(-2px)' }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#D4AF37'; el.style.transform='translateY(0)' }}>
                 Mám zájem
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -242,12 +242,12 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
           {/* ── KEY STATS STRIP ─────────────────────── */}
           {stats.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0,
-              borderBottom: '1px solid rgba(17,17,17,0.08)', marginBottom: '4rem' }}>
+              borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: '4rem' }}>
               {stats.map((s, i) => (
                 <div key={i} style={{ padding: '1.5rem 2rem',
-                  borderRight: i < stats.length - 1 ? '1px solid rgba(17,17,17,0.08)' : 'none' }}>
+                  borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
                   <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em',
-                    textTransform: 'uppercase', color: 'rgba(17,17,17,0.3)', marginBottom: '0.3rem' }}>
+                    textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.3rem' }}>
                     {s.label}
                   </div>
                   <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111111',
@@ -316,7 +316,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
               {p.mapLink && (
                 <Section title="Poloha na mapě">
                   <div style={{ borderRadius: '1rem', overflow: 'hidden',
-                    aspectRatio: '16/9', background: 'rgba(17,17,17,0.06)' }}>
+                    aspectRatio: '16/9', background: 'rgba(255,255,255,0.06)' }}>
                     <iframe
                       src={p.mapLink}
                       width="100%" height="100%"
@@ -335,9 +335,9 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                       <div key={i} style={{ display: 'grid', gridTemplateColumns: '180px 1fr',
                         gap: '1rem', padding: '1rem 0',
                         borderBottom: i < techRows.length - 1
-                          ? '1px solid rgba(17,17,17,0.06)' : 'none' }}>
+                          ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
                         <span style={{ fontSize: '0.75rem', fontWeight: 700,
-                          color: 'rgba(17,17,17,0.35)', letterSpacing: '0.04em' }}>
+                          color: 'rgba(255,255,255,0.3)', letterSpacing: '0.04em' }}>
                           {row.label}
                         </span>
                         <span style={{ fontSize: '0.85rem', color: '#111111',
@@ -358,7 +358,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                 {/* Glow */}
                 <div style={{ position: 'absolute', bottom: -60, right: -60,
                   width: 200, height: 200, borderRadius: '50%', pointerEvents: 'none',
-                  background: 'radial-gradient(circle, rgba(201,165,66,0.2) 0%, transparent 70%)' }} />
+                  background: 'radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)' }} />
 
                 {/* Broker */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem',
@@ -385,15 +385,15 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                 {/* Buttons */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   <button onClick={openContactModal}
-                    style={{ background: '#C9A542', color: '#fff', border: 'none',
+                    style={{ background: '#D4AF37', color: '#fff', border: 'none',
                       borderRadius: 999, padding: '0.875rem 1.5rem',
                       fontSize: '0.78rem', fontWeight: 800, cursor: 'pointer',
                       letterSpacing: '0.08em', textTransform: 'uppercase',
                       transition: 'all 0.25s', display: 'flex', alignItems: 'center',
                       justifyContent: 'center', gap: '0.5rem',
-                      boxShadow: '0 4px 24px rgba(201,165,66,0.35)' }}
-                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8922F'}
-                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#C9A542'}>
+                      boxShadow: '0 4px 24px rgba(212,175,55,0.35)' }}
+                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8960D'}
+                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#D4AF37'}>
                     Mám zájem o nemovitost
                   </button>
                   <a href="tel:+420728111836"
@@ -445,7 +445,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <div>
       <h2 style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em',
-        textTransform: 'uppercase', color: '#C9A542', marginBottom: '1.5rem' }}>
+        textTransform: 'uppercase', color: '#D4AF37', marginBottom: '1.5rem' }}>
         {title}
       </h2>
       {children}
@@ -467,7 +467,7 @@ function ShareButton({ title }: { title: string }) {
       style={{ marginTop: '1rem', width: '100%', background: 'none',
         border: '1px solid rgba(17,17,17,0.1)', borderRadius: 999,
         padding: '0.65rem 1rem', fontSize: '0.72rem', fontWeight: 700,
-        color: copied ? '#4ade80' : 'rgba(17,17,17,0.4)', cursor: 'pointer',
+        color: copied ? '#4ade80' : 'rgba(255,255,255,0.4)', cursor: 'pointer',
         letterSpacing: '0.06em', textTransform: 'uppercase', transition: 'all 0.2s',
         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
       {copied ? (

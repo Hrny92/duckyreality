@@ -64,7 +64,7 @@ export default function Hero() {
         >
           <div
             className="pulse"
-            style={{ width: 6, height: 6, borderRadius: '50%', background: '#C9A542', flexShrink: 0 }}
+            style={{ width: 6, height: 6, borderRadius: '50%', background: '#D4AF37', flexShrink: 0 }}
           />
           <span
             className="eyebrow"
@@ -138,13 +138,13 @@ export default function Hero() {
             <a
               href="#nabidka"
               style={{
-                background: '#C9A542', color: '#fff', fontWeight: 700,
+                background: '#D4AF37', color: '#fff', fontWeight: 700,
                 fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase',
                 padding: '0.9rem 2rem', borderRadius: 999, textDecoration: 'none',
                 transition: `all 0.25s ${EASE}`,
               }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#B8922F'; el.style.transform = 'translateY(-2px)' }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#C9A542'; el.style.transform = 'translateY(0)' }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#B8960D'; el.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#D4AF37'; el.style.transform = 'translateY(0)' }}
             >
               Prohlédnout nabídku
             </a>

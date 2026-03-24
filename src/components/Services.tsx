@@ -31,19 +31,19 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="sluzby" style={{ background: '#f4f3f0', padding: '8rem 0' }}>
+    <section id="sluzby" style={{ background: '#141414', padding: '8rem 0' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Header */}
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '5rem' }}>
-            <span className="eyebrow" style={{ color: '#C9A542', flexShrink: 0 }}>Moje služby</span>
+            <span className="eyebrow" style={{ color: '#D4AF37', flexShrink: 0 }}>Moje služby</span>
             <div className="h-rule" style={{ flexGrow: 1 }} />
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <h2 className="display-md" style={{ color: '#111111', marginBottom: '5rem', maxWidth: 600 }}>
+          <h2 className="display-md" style={{ color: '#fff', marginBottom: '5rem', maxWidth: 600 }}>
             Kompletní péče<br/>
             <span className="orange-word">od A do Z.</span>
           </h2>
@@ -53,12 +53,12 @@ export default function Services() {
         {services.map((s, i) => (
           <Reveal key={s.n} direction="up" delay={0} duration={700}>
             <div>
-              <div style={{ height: 1, background: 'rgba(17,17,17,0.08)' }} />
+              <div style={{ height: 1, background: 'rgba(255,255,255,0.08)' }} />
               <div className="service-row">
 
                 {/* Number */}
                 <div className="service-num" style={{
-                  fontSize: '0.7rem', fontWeight: 700, color: 'rgba(17,17,17,0.25)',
+                  fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.2)',
                   letterSpacing: '0.1em', paddingTop: '0.3rem',
                 }}>
                   {s.n}
@@ -70,14 +70,14 @@ export default function Services() {
                     letterSpacing: '-0.02em', marginBottom: '1rem' }}>
                     {s.title}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(17,17,17,0.5)',
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.5)',
                     fontWeight: 400, maxWidth: 360 }}>
                     {s.desc}
                   </p>
                   <button onClick={openContactModal}
                     style={{
                       display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                      color: '#C9A542', fontWeight: 700, fontSize: '0.75rem',
+                      color: '#D4AF37', fontWeight: 700, fontSize: '0.75rem',
                       letterSpacing: '0.08em', textTransform: 'uppercase',
                       background: 'none', border: 'none', padding: 0,
                       cursor: 'pointer', marginTop: '1.75rem', transition: 'gap 0.3s',
@@ -94,7 +94,7 @@ export default function Services() {
                   {s.items.map((item, j) => (
                     <Reveal key={item} direction="left" delay={j * 60} duration={400}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <div style={{ width: 4, height: 4, borderRadius: '50%', background: '#C9A542', flexShrink: 0 }} />
+                        <div style={{ width: 4, height: 4, borderRadius: '50%', background: '#D4AF37', flexShrink: 0 }} />
                         <span style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111111' }}>{item}</span>
                       </div>
                     </Reveal>
@@ -104,7 +104,7 @@ export default function Services() {
             </div>
           </Reveal>
         ))}
-        <div style={{ height: 1, background: 'rgba(17,17,17,0.08)' }} />
+        <div style={{ height: 1, background: 'rgba(255,255,255,0.08)' }} />
       </div>
     </section>
   )

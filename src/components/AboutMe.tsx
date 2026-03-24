@@ -5,13 +5,13 @@ import Counter from '@/components/Counter'
 
 export default function AboutMe() {
   return (
-    <section id="o-mne" style={{ background: '#f4f3f0', padding: '8rem 0', overflow: 'hidden' }}>
+    <section id="o-mne" style={{ background: '#141414', padding: '8rem 0', overflow: 'hidden' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Eyebrow */}
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '5rem' }}>
-            <span className="eyebrow" style={{ color: '#C9A542', flexShrink: 0 }}>O mně</span>
+            <span className="eyebrow" style={{ color: '#D4AF37', flexShrink: 0 }}>O mně</span>
             <div className="h-rule" style={{ flexGrow: 1 }} />
           </div>
         </Reveal>
@@ -58,9 +58,9 @@ export default function AboutMe() {
               <div
                 style={{
                   position: 'absolute', bottom: '1.25rem', left: '1.25rem', zIndex: 2,
-                  background: '#C9A542', color: '#fff', borderRadius: '1rem',
+                  background: '#D4AF37', color: '#fff', borderRadius: '1rem',
                   padding: '0.875rem 1.25rem',
-                  boxShadow: '0 8px 24px rgba(201,165,66,0.45)',
+                  boxShadow: '0 8px 24px rgba(212,175,55,0.45)',
                 }}
               >
                 <div style={{ fontSize: '1.9rem', fontWeight: 900, lineHeight: 1, letterSpacing: '-0.04em' }}>
@@ -77,12 +77,12 @@ export default function AboutMe() {
           {/* Pravý sloupec — text přijíždí zprava */}
           <Reveal direction="right" delay={150} duration={800}>
             <div style={{ paddingTop: '1rem' }}>
-              <h2 className="display-md" style={{ color: '#111111', marginBottom: '2rem' }}>
+              <h2 className="display-md" style={{ color: '#fff', marginBottom: '2rem' }}>
                 Makléř,&nbsp;<br />
                 <span className="orange-word">kterému záleží.</span>
               </h2>
 
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(17,17,17,0.6)',
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)',
                 marginBottom: '1.25rem', fontWeight: 400 }}>
                 Nemovitosti jsou má vášeň. Obchoduji s nimi již několik let, a proto
                 jsem se rozhodl tento sen uskutečnit a stát se realitním makléřem.
@@ -90,7 +90,7 @@ export default function AboutMe() {
                 realizovat jejich sny.
               </p>
 
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(17,17,17,0.6)',
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)',
                 marginBottom: '3rem', fontWeight: 400 }}>
                 V realitách věřím, že úspěch stojí na důvěře a osobním přístupu.
                 Klienti oceňují, že jsem jim k dispozici od začátku až do konce
@@ -108,9 +108,9 @@ export default function AboutMe() {
                 ].map((item, i) => (
                   <Reveal key={item} direction="up" delay={300 + i * 70} duration={500}>
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.875rem' }}>
-                      <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C9A542',
+                      <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D4AF37',
                         flexShrink: 0, marginTop: '0.55rem' }} />
-                      <span style={{ fontSize: '0.9rem', fontWeight: 500, color: '#111111', lineHeight: 1.6 }}>
+                      <span style={{ fontSize: '0.9rem', fontWeight: 500, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6 }}>
                         {item}
                       </span>
                     </div>
@@ -122,13 +122,13 @@ export default function AboutMe() {
                 onClick={openContactModal}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-                  background: '#C9A542', color: '#fff', fontWeight: 700, fontSize: '0.75rem',
+                  background: '#D4AF37', color: '#fff', fontWeight: 700, fontSize: '0.75rem',
                   letterSpacing: '0.1em', textTransform: 'uppercase',
                   padding: '0.9rem 2rem', borderRadius: 999, border: 'none',
                   cursor: 'pointer', transition: 'all 0.25s',
                 }}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#B8922F'; el.style.transform = 'translateY(-2px)' }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#C9A542'; el.style.transform = 'translateY(0)' }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#B8960D'; el.style.transform = 'translateY(-2px)' }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#D4AF37'; el.style.transform = 'translateY(0)' }}
               >
                 Domluvit konzultaci
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

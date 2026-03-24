@@ -94,7 +94,7 @@ export default function CookieConsent() {
                   lineHeight: 1.65, maxWidth: 440 }}>
                   Používáme technické cookies (nutné pro provoz webu) a volitelné analytické
                   & marketingové cookies pro lepší zážitek. Více v&nbsp;
-                  <a href="/gdpr" style={{ color: '#C9A542', textDecoration: 'none', fontWeight: 600 }}>
+                  <a href="/gdpr" style={{ color: '#D4AF37', textDecoration: 'none', fontWeight: 600 }}>
                     zásadách ochrany osobních údajů
                   </a>.
                 </p>
@@ -105,13 +105,13 @@ export default function CookieConsent() {
               alignItems: 'center' }}>
               {/* Accept all */}
               <button onClick={acceptAll}
-                style={{ background: '#C9A542', color: '#fff', border: 'none',
+                style={{ background: '#D4AF37', color: '#fff', border: 'none',
                   borderRadius: 999, padding: '0.65rem 1.5rem',
                   fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.08em',
                   textTransform: 'uppercase', cursor: 'pointer',
                   transition: 'background 0.2s' }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8922F'}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#C9A542'}>
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8960D'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#D4AF37'}>
                 Přijmout vše
               </button>
 
@@ -201,13 +201,13 @@ export default function CookieConsent() {
             {/* Actions */}
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               <button onClick={saveCustom}
-                style={{ background: '#C9A542', color: '#fff', border: 'none',
+                style={{ background: '#D4AF37', color: '#fff', border: 'none',
                   borderRadius: 999, padding: '0.65rem 1.5rem',
                   fontSize: '0.72rem', fontWeight: 800, letterSpacing: '0.08em',
                   textTransform: 'uppercase', cursor: 'pointer', flex: 1,
                   transition: 'background 0.2s' }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8922F'}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#C9A542'}>
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background='#B8960D'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background='#D4AF37'}>
                 Uložit nastavení
               </button>
               <button onClick={acceptAll}
@@ -260,7 +260,7 @@ function CookieRow({
         style={{
           flexShrink: 0, width: 40, height: 22, borderRadius: 999, border: 'none',
           cursor: disabled ? 'not-allowed' : 'pointer',
-          background: checked ? '#C9A542' : 'rgba(255,255,255,0.1)',
+          background: checked ? '#D4AF37' : 'rgba(255,255,255,0.1)',
           position: 'relative', transition: 'background 0.25s',
           opacity: disabled ? 0.5 : 1,
         }}>

@@ -90,9 +90,9 @@ export default function Footer() {
                   transition: 'all 0.2s' }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.borderColor = '#C9A542'
-                  el.style.color = '#C9A542'
-                  el.style.background = 'rgba(201,165,66,0.08)'
+                  el.style.borderColor = '#D4AF37'
+                  el.style.color = '#D4AF37'
+                  el.style.background = 'rgba(212,175,55,0.08)'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLElement

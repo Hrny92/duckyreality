@@ -12,20 +12,20 @@ const items = [
 
 export default function WhyMe() {
   return (
-    <section id="proc" style={{ background: '#fff', padding: '8rem 0' }}>
+    <section id="proc" style={{ background: '#0A0A0A', padding: '8rem 0' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Header */}
         <Reveal>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '5rem' }}>
-            <span className="eyebrow" style={{ color: '#C9A542', flexShrink: 0 }}>Proč se mnou</span>
+            <span className="eyebrow" style={{ color: '#D4AF37', flexShrink: 0 }}>Proč se mnou</span>
             <div className="h-rule" style={{ flexGrow: 1 }} />
           </div>
         </Reveal>
 
         {/* Headline */}
         <Reveal delay={100}>
-          <h2 className="display-md" style={{ color: '#111111', marginBottom: '5rem', maxWidth: 700 }}>
+          <h2 className="display-md" style={{ color: '#fff', marginBottom: '5rem', maxWidth: 700 }}>
             Šest důvodů,<br/>
             <span className="orange-word">proč vybrat si mě.</span>
           </h2>
@@ -42,16 +42,16 @@ export default function WhyMe() {
                   className="why-item"
                   style={{
                     padding: '2.5rem', position: 'relative', height: '100%',
-                    borderRight: isRightCol ? 'none' : '1px solid rgba(17,17,17,0.07)',
-                    borderBottom: isLastRow ? 'none' : '1px solid rgba(17,17,17,0.07)',
+                    borderRight: isRightCol ? 'none' : '1px solid rgba(255,255,255,0.07)',
+                    borderBottom: isLastRow ? 'none' : '1px solid rgba(255,255,255,0.07)',
                     transition: 'background 0.3s',
                   }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f4f3f0'}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)'}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'transparent'}
                 >
                   {/* Big number */}
                   <div style={{
-                    fontSize: '4rem', fontWeight: 900, color: 'rgba(17,17,17,0.06)',
+                    fontSize: '4rem', fontWeight: 900, color: 'rgba(255,255,255,0.06)',
                     lineHeight: 1, letterSpacing: '-0.04em', marginBottom: '1.5rem',
                     transition: 'color 0.3s',
                   }}>
@@ -59,13 +59,13 @@ export default function WhyMe() {
                   </div>
 
                   {/* Orange dot */}
-                  <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C9A542', marginBottom: '1rem' }} />
+                  <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D4AF37', marginBottom: '1rem' }} />
 
-                  <h3 style={{ fontSize: '1rem', fontWeight: 800, color: '#111111',
+                  <h3 style={{ fontSize: '1rem', fontWeight: 800, color: '#fff',
                     marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(17,17,17,0.5)', fontWeight: 400 }}>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>
                     {item.text}
                   </p>
                 </div>

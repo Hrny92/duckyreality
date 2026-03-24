@@ -99,7 +99,7 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
             justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#C9A542',
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#D4AF37',
                   animation: 'pulse 2s infinite' }} />
                 <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em',
                   textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}>
@@ -109,7 +109,7 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
               <h1 style={{ fontSize: 'clamp(2.5rem,5vw,4rem)', fontWeight: 900,
                 letterSpacing: '-0.03em', lineHeight: 1.0, color: '#fff' }}>
                 Aktuální<br/>
-                <span style={{ color: '#C9A542' }}>nemovitosti.</span>
+                <span style={{ color: '#D4AF37' }}>nemovitosti.</span>
               </h1>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.35)',
@@ -122,13 +122,13 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
       </section>
 
       {/* ── MAIN CONTENT ────────────────────────────────────── */}
-      <section style={{ background: '#f4f3f0', minHeight: '60vh', paddingBottom: '8rem' }}>
+      <section style={{ background: '#141414', minHeight: '60vh', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
           {/* ── FILTER BAR ──────────────────────────── */}
-          <div style={{ position: 'sticky', top: 64, zIndex: 40, background: '#f4f3f0',
+          <div style={{ position: 'sticky', top: 64, zIndex: 40, background: '#141414',
             paddingTop: '2rem', paddingBottom: '1.5rem',
-            borderBottom: '1px solid rgba(17,17,17,0.08)',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
             marginBottom: '3rem' }}>
 
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center',
@@ -138,7 +138,7 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
               <div style={{ flex: '1 1 240px', position: 'relative' }}>
                 <svg style={{ position: 'absolute', left: '0.9rem', top: '50%',
                   transform: 'translateY(-50%)', pointerEvents: 'none',
-                  color: 'rgba(17,17,17,0.3)' }}
+                  color: 'rgba(255,255,255,0.3)' }}
                   width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <circle cx="6" cy="6" r="4.5" stroke="currentColor" strokeWidth="1.4"/>
                   <path d="M10 10l2.5 2.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
@@ -147,21 +147,21 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
                   value={search} onChange={e => setSearch(e.target.value)}
                   style={{ width: '100%', paddingLeft: '2.25rem', paddingRight: '1rem',
                     paddingTop: '0.65rem', paddingBottom: '0.65rem',
-                    fontSize: '0.82rem', fontWeight: 500, color: '#111111',
-                    background: '#fff', border: '1px solid rgba(17,17,17,0.12)',
+                    fontSize: '0.82rem', fontWeight: 500, color: '#fff',
+                    background: '#1C1C1C', border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: 999, outline: 'none',
                     boxSizing: 'border-box', fontFamily: 'inherit', transition: 'border-color 0.2s' }}
-                  onFocus={e => (e.currentTarget.style.borderColor = '#C9A542')}
-                  onBlur={e => (e.currentTarget.style.borderColor = 'rgba(17,17,17,0.12)')}
+                  onFocus={e => (e.currentTarget.style.borderColor = '#D4AF37')}
+                  onBlur={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)')}
                 />
               </div>
 
               {/* Filter toggle */}
               <button onClick={() => setFiltersOpen(o => !o)}
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem',
-                  background: activeCount > 0 ? '#C9A542' : '#fff',
+                  background: activeCount > 0 ? '#D4AF37' : '#fff',
                   color: activeCount > 0 ? '#fff' : '#111111',
-                  border: '1px solid rgba(17,17,17,0.12)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   borderRadius: 999, padding: '0.65rem 1.1rem',
                   fontSize: '0.78rem', fontWeight: 700, cursor: 'pointer',
                   letterSpacing: '0.06em', transition: 'all 0.2s', flexShrink: 0 }}>
@@ -181,10 +181,10 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
               {/* Sort */}
               <div style={{ position: 'relative', flexShrink: 0 }}>
                 <select value={sort} onChange={e => setSort(e.target.value as SortKey)}
-                  style={{ appearance: 'none', background: '#fff',
-                    border: '1px solid rgba(17,17,17,0.12)',
+                  style={{ appearance: 'none', background: '#1C1C1C',
+                    border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: 999, padding: '0.65rem 2.2rem 0.65rem 1rem',
-                    fontSize: '0.78rem', fontWeight: 600, color: '#111111',
+                    fontSize: '0.78rem', fontWeight: 600, color: '#fff',
                     cursor: 'pointer', fontFamily: 'inherit', outline: 'none' }}>
                   <option value="default">Řadit: výchozí</option>
                   <option value="price_asc">Cena: nejnižší</option>
@@ -195,18 +195,18 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
                 <svg style={{ position: 'absolute', right: '0.75rem', top: '50%',
                   transform: 'translateY(-50%)', pointerEvents: 'none' }}
                   width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M2 3.5l3 3 3-3" stroke="#111111" strokeWidth="1.4" strokeLinecap="round"/>
+                  <path d="M2 3.5l3 3 3-3" stroke="rgba(255,255,255,0.5)" strokeWidth="1.4" strokeLinecap="round"/>
                 </svg>
               </div>
 
               {activeCount > 0 && (
                 <button onClick={resetFilters}
                   style={{ background: 'none', border: 'none', padding: 0,
-                    fontSize: '0.72rem', fontWeight: 600, color: 'rgba(17,17,17,0.35)',
+                    fontSize: '0.72rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)',
                     cursor: 'pointer', letterSpacing: '0.05em', textTransform: 'uppercase',
                     transition: 'color 0.2s', flexShrink: 0 }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#C9A542'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'rgba(17,17,17,0.35)'}>
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#D4AF37'}
+                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.3)'}>
                   Zrušit filtry
                 </button>
               )}
@@ -282,13 +282,13 @@ export default function PropertiesPage({ properties }: { properties: SanityPrope
               </p>
             </div>
             <button onClick={openContactModal}
-              style={{ background: '#C9A542', color: '#fff', border: 'none',
+              style={{ background: '#D4AF37', color: '#fff', border: 'none',
                 borderRadius: 999, padding: '0.9rem 2.25rem',
                 fontSize: '0.78rem', fontWeight: 800, cursor: 'pointer',
                 letterSpacing: '0.1em', textTransform: 'uppercase',
-                transition: 'all 0.25s', boxShadow: '0 0 30px rgba(201,165,66,0.3)', flexShrink: 0 }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#B8922F'; el.style.transform='translateY(-2px)' }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#C9A542'; el.style.transform='translateY(0)' }}>
+                transition: 'all 0.25s', boxShadow: '0 0 30px rgba(212,175,55,0.3)', flexShrink: 0 }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#B8960D'; el.style.transform='translateY(-2px)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#D4AF37'; el.style.transform='translateY(0)' }}>
               Nezávazná poptávka
             </button>
           </div>
@@ -314,7 +314,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
 
   return (
     <div>
-      {index > 0 && <div style={{ height: 1, background: 'rgba(17,17,17,0.07)' }} />}
+      {index > 0 && <div style={{ height: 1, background: 'rgba(255,255,255,0.07)' }} />}
 
       <Link href={`/nemovitosti/${p.slug.current}`}
         style={{ textDecoration: 'none', display: 'block' }}
@@ -326,20 +326,20 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
 
           {/* Index */}
           <span className="prop-col-index" style={{ fontSize: '0.68rem', fontWeight: 700,
-            color: 'rgba(17,17,17,0.2)', fontVariantNumeric: 'tabular-nums' }}>
+            color: 'rgba(255,255,255,0.2)', fontVariantNumeric: 'tabular-nums' }}>
             {String(index + 1).padStart(2, '0')}
           </span>
 
           {/* Thumbnail */}
           <div style={{ width: 80, height: 60, borderRadius: '0.6rem', flexShrink: 0,
-            background: 'rgba(17,17,17,0.06)', overflow: 'hidden',
+            background: 'rgba(255,255,255,0.06)', overflow: 'hidden',
             display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {thumbUrl ? (
               <img src={thumbUrl} alt={p.title}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             ) : (
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <path d="M2 17l5-6 3.5 3.5L15 9l5 8H2z" stroke="rgba(17,17,17,0.2)"
+                <path d="M2 17l5-6 3.5 3.5L15 9l5 8H2z" stroke="rgba(255,255,255,0.2)"
                   strokeWidth="1.3" strokeLinejoin="round"/>
               </svg>
             )}
@@ -347,18 +347,18 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
 
           {/* Title + meta */}
           <div style={{ minWidth: 0 }}>
-            <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111111',
+            <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff',
               letterSpacing: '-0.01em', marginBottom: '0.2rem',
               whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
               transition: 'color 0.2s',
-              ...(hovered ? { color: '#C9A542' } : {}) }}>
+              ...(hovered ? { color: '#D4AF37' } : {}) }}>
               {p.title}
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'rgba(17,17,17,0.4)',
+            <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)',
               fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <span>{p.location}</span>
-              {p.area && <><span style={{ color: 'rgba(17,17,17,0.2)' }}>·</span><span>{p.area} m²</span></>}
-              {p.layout && <><span style={{ color: 'rgba(17,17,17,0.2)' }}>·</span><span>{p.layout}</span></>}
+              {p.area && <><span style={{ color: 'rgba(255,255,255,0.2)' }}>·</span><span>{p.area} m²</span></>}
+              {p.layout && <><span style={{ color: 'rgba(255,255,255,0.2)' }}>·</span><span>{p.layout}</span></>}
             </div>
           </div>
 
@@ -366,14 +366,14 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
           <div className="prop-col-type" style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 800,
             letterSpacing: '0.1em', textTransform: 'uppercase', borderRadius: 999,
             padding: '0.3rem 0.75rem',
-            background: p.transactionType === 'prodej' ? 'rgba(201,165,66,0.1)' : 'rgba(17,17,17,0.07)',
-            color: p.transactionType === 'prodej' ? '#C9A542' : 'rgba(17,17,17,0.5)' }}>
+            background: p.transactionType === 'prodej' ? 'rgba(212,175,55,0.1)' : 'rgba(255,255,255,0.07)',
+            color: p.transactionType === 'prodej' ? '#D4AF37' : 'rgba(255,255,255,0.5)' }}>
             {TRANSACTION_LABELS[p.transactionType] ?? p.transactionType}
           </div>
 
           {/* Category */}
           <div className="prop-col-cat" style={{ flexShrink: 0, fontSize: '0.65rem', fontWeight: 700,
-            color: 'rgba(17,17,17,0.35)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+            color: 'rgba(255,255,255,0.3)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
             {CATEGORY_LABELS[p.category] ?? p.category}
           </div>
 
@@ -381,7 +381,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
           <div className="prop-col-status" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
             <div style={{ width: 5, height: 5, borderRadius: '50%', background: statusColor, flexShrink: 0 }} />
             <span style={{ fontSize: '0.68rem', fontWeight: 700,
-              color: status === 'active' ? 'rgba(17,17,17,0.4)' : statusColor,
+              color: status === 'active' ? 'rgba(255,255,255,0.4)' : statusColor,
               textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               {statusLabel}
             </span>
@@ -389,7 +389,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
 
           {/* Price */}
           <div className="prop-col-price" style={{ textAlign: 'right', flexShrink: 0, minWidth: 170 }}>
-            <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#111111',
+            <div style={{ fontSize: '1.1rem', fontWeight: 900, color: '#fff',
               letterSpacing: '-0.02em',
               opacity: status === 'sold' ? 0.3 : 1 }}>
               {p.price}
@@ -398,7 +398,7 @@ function PropertyRow({ p, index, total }: { p: SanityProperty; index: number; to
         </div>
       </Link>
 
-      {index === total - 1 && <div style={{ height: 1, background: 'rgba(17,17,17,0.07)' }} />}
+      {index === total - 1 && <div style={{ height: 1, background: 'rgba(255,255,255,0.07)' }} />}
     </div>
   )
 }
@@ -409,14 +409,14 @@ function EmptyState({ type, onReset }: { type: 'no-data' | 'no-results'; onReset
     <div style={{ textAlign: 'center', paddingTop: '6rem', paddingBottom: '6rem' }}>
       {type === 'no-data' ? (
         <>
-          <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#111111', marginBottom: '0.5rem' }}>
+          <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
             Žádné nemovitosti
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(17,17,17,0.4)' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
             Sanity CMS ještě neobsahuje žádné záznamy nebo se nepodařilo načíst data.
           </p>
           <button onClick={openContactModal}
-            style={{ marginTop: '1.5rem', background: '#C9A542', color: '#fff',
+            style={{ marginTop: '1.5rem', background: '#D4AF37', color: '#fff',
               border: 'none', borderRadius: 999, padding: '0.75rem 2rem',
               fontSize: '0.78rem', fontWeight: 700, cursor: 'pointer',
               letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -425,14 +425,14 @@ function EmptyState({ type, onReset }: { type: 'no-data' | 'no-results'; onReset
         </>
       ) : (
         <>
-          <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#111111', marginBottom: '0.5rem' }}>
+          <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
             Žádné výsledky
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(17,17,17,0.4)' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
             Zkuste upravit nebo zrušit filtry.
           </p>
           <button onClick={onReset}
-            style={{ marginTop: '1.5rem', background: '#C9A542', color: '#fff',
+            style={{ marginTop: '1.5rem', background: '#D4AF37', color: '#fff',
               border: 'none', borderRadius: 999, padding: '0.75rem 2rem',
               fontSize: '0.78rem', fontWeight: 700, cursor: 'pointer',
               letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -449,7 +449,7 @@ function FilterGroup({ label, children }: { label: string; children: React.React
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
       <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em',
-        textTransform: 'uppercase', color: 'rgba(17,17,17,0.3)', marginRight: '0.25rem', flexShrink: 0 }}>
+        textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginRight: '0.25rem', flexShrink: 0 }}>
         {label}
       </span>
       {children}
@@ -462,9 +462,9 @@ function Chip({ label, active, onClick }: { label: string; active: boolean; onCl
     <button onClick={onClick}
       style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.04em',
         borderRadius: 999, padding: '0.35rem 0.85rem', cursor: 'pointer',
-        border: active ? 'none' : '1px solid rgba(17,17,17,0.12)',
-        background: active ? '#C9A542' : '#fff',
-        color: active ? '#fff' : 'rgba(17,17,17,0.55)',
+        border: active ? 'none' : '1px solid rgba(255,255,255,0.1)',
+        background: active ? '#D4AF37' : '#1C1C1C',
+        color: active ? '#fff' : 'rgba(255,255,255,0.5)',
         transition: 'all 0.15s' }}>
       {label}
     </button>
