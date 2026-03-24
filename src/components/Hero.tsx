@@ -25,7 +25,7 @@ export default function Hero() {
           inset: 0,
           backgroundImage: 'url(/ducky-bg.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          backgroundPosition: 'right top',
           backgroundRepeat: 'no-repeat',
         }}
       />

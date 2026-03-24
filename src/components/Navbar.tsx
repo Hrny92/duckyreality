@@ -167,6 +167,27 @@ export default function Navbar() {
 
         <div className="mobile-nav__inner">
 
+          {/* Close button */}
+          <button
+            onClick={() => setOpen(false)}
+            aria-label="Zavřít menu"
+            style={{
+              position: 'absolute', top: '1.5rem', right: '1.5rem',
+              background: 'rgba(255,255,255,0.07)', border: 'none',
+              borderRadius: '50%', width: 44, height: 44,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', color: 'rgba(255,255,255,0.7)',
+              transition: 'background 0.2s, color 0.2s',
+              flexShrink: 0,
+            }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='rgba(255,255,255,0.14)'; el.style.color='#fff' }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='rgba(255,255,255,0.07)'; el.style.color='rgba(255,255,255,0.7)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+            </svg>
+          </button>
+
           {/* Nav links */}
           <nav className="mobile-nav__links">
             {links.map((l, i) => (
