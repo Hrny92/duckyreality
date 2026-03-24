@@ -36,7 +36,7 @@ export default function Hero() {
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(to bottom, rgba(0,26,41,0.0) 30%, rgba(0,26,41,0.5) 80%, rgba(0,26,41,0.93) 100%)',
+            'linear-gradient(to bottom, rgba(10,10,10,0.0) 30%, rgba(20,20,20,0.6) 75%, rgba(20,20,20,1.0) 100%)',
         }}
       />
 
