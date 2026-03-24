@@ -69,13 +69,13 @@ export default function ContactModal() {
         @keyframes fadeIn  { from { opacity: 0 } to { opacity: 1 } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: translateY(0) } }
         .modal-input {
-          width: 100%; background: rgba(0,43,64,0.04); border: 1px solid rgba(0,43,64,0.12);
+          width: 100%; background: rgba(17,17,17,0.04); border: 1px solid rgba(17,17,17,0.12);
           border-radius: 0.75rem; padding: 0.875rem 1rem; font-size: 0.9rem;
-          color: #002b40; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+          color: #111111; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
           font-family: inherit;
         }
-        .modal-input:focus { border-color: #e94e1b; box-shadow: 0 0 0 3px rgba(233,78,27,0.1); }
-        .modal-input::placeholder { color: rgba(0,43,64,0.3); }
+        .modal-input:focus { border-color: #C9A542; box-shadow: 0 0 0 3px rgba(201,165,66,0.1); }
+        .modal-input::placeholder { color: rgba(17,17,17,0.3); }
       `}</style>
 
       {/* Dialog */}
@@ -89,12 +89,12 @@ export default function ContactModal() {
         {/* Zavřít */}
         <button onClick={close} style={{
           position: 'absolute', top: '1.5rem', right: '1.5rem',
-          width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(0,43,64,0.1)',
+          width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(17,17,17,0.1)',
           background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center',
-          justifyContent: 'center', color: 'rgba(0,43,64,0.4)', transition: 'all 0.2s',
+          justifyContent: 'center', color: 'rgba(17,17,17,0.4)', transition: 'all 0.2s',
         }}
-          onMouseEnter={e => { const el = e.currentTarget; el.style.background='#002b40'; el.style.color='#fff'; el.style.borderColor='#002b40' }}
-          onMouseLeave={e => { const el = e.currentTarget; el.style.background='none'; el.style.color='rgba(0,43,64,0.4)'; el.style.borderColor='rgba(0,43,64,0.1)' }}
+          onMouseEnter={e => { const el = e.currentTarget; el.style.background='#111111'; el.style.color='#fff'; el.style.borderColor='#111111' }}
+          onMouseLeave={e => { const el = e.currentTarget; el.style.background='none'; el.style.color='rgba(17,17,17,0.4)'; el.style.borderColor='rgba(17,17,17,0.1)' }}
           aria-label="Zavřít"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -105,25 +105,25 @@ export default function ContactModal() {
         {sent ? (
           /* ── Potvrzení odeslání ── */
           <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-            <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(233,78,27,0.1)',
+            <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(201,165,66,0.1)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <path d="M5 14l6 6L23 8" stroke="#e94e1b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 14l6 6L23 8" stroke="#C9A542" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#002b40',
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#111111',
               letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>Zpráva odeslána!</h3>
-            <p style={{ color: 'rgba(0,43,64,0.5)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+            <p style={{ color: 'rgba(17,17,17,0.5)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '2rem' }}>
               Děkuji za váš zájem. Ozvu se vám co nejdříve, obvykle do 24 hodin.
             </p>
             <button onClick={close} style={{
-              background: '#e94e1b', color: '#fff', fontWeight: 700,
+              background: '#C9A542', color: '#fff', fontWeight: 700,
               fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase',
               padding: '0.875rem 2rem', borderRadius: 999, border: 'none', cursor: 'pointer',
               transition: 'background 0.2s',
             }}
-              onMouseEnter={e => (e.currentTarget.style.background='#d63e0d')}
-              onMouseLeave={e => (e.currentTarget.style.background='#e94e1b')}>
+              onMouseEnter={e => (e.currentTarget.style.background='#B8922F')}
+              onMouseLeave={e => (e.currentTarget.style.background='#C9A542')}>
               Zavřít
             </button>
           </div>
@@ -133,17 +133,17 @@ export default function ContactModal() {
             {/* Hlavička */}
             <div style={{ marginBottom: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#e94e1b' }} />
+                <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C9A542' }} />
                 <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em',
-                  textTransform: 'uppercase', color: 'rgba(0,43,64,0.4)' }}>
+                  textTransform: 'uppercase', color: 'rgba(17,17,17,0.4)' }}>
                   Bezplatná konzultace
                 </span>
               </div>
               <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 900,
-                color: '#002b40', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+                color: '#111111', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
                 Napište mi.
               </h2>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'rgba(0,43,64,0.45)',
+              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'rgba(17,17,17,0.45)',
                 lineHeight: 1.6 }}>
                 Ozveme se vám do 24 hodin. Bez závazků.
               </p>
@@ -153,7 +153,7 @@ export default function ContactModal() {
               {/* Jméno + telefon */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(0,43,64,0.5)',
+                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(17,17,17,0.5)',
                     letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
                     Jméno *
                   </label>
@@ -161,7 +161,7 @@ export default function ContactModal() {
                     placeholder="Jan Novák" value={fields.name} onChange={set('name')} />
                 </div>
                 <div>
-                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(0,43,64,0.5)',
+                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(17,17,17,0.5)',
                     letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
                     Telefon
                   </label>
@@ -172,7 +172,7 @@ export default function ContactModal() {
 
               {/* E-mail */}
               <div>
-                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(0,43,64,0.5)',
+                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(17,17,17,0.5)',
                   letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
                   E-mail *
                 </label>
@@ -182,7 +182,7 @@ export default function ContactModal() {
 
               {/* Zpráva */}
               <div>
-                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(0,43,64,0.5)',
+                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(17,17,17,0.5)',
                   letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
                   Zpráva *
                 </label>
@@ -194,7 +194,7 @@ export default function ContactModal() {
 
               {/* Odeslat */}
               <button type="submit" disabled={sending} style={{
-                background: sending ? 'rgba(233,78,27,0.6)' : '#e94e1b',
+                background: sending ? 'rgba(201,165,66,0.6)' : '#C9A542',
                 color: '#fff', fontWeight: 800, fontSize: '0.8rem',
                 letterSpacing: '0.1em', textTransform: 'uppercase',
                 padding: '1rem 2rem', borderRadius: 999, border: 'none',
@@ -202,8 +202,8 @@ export default function ContactModal() {
                 transition: 'all 0.2s', display: 'flex', alignItems: 'center',
                 justifyContent: 'center', gap: '0.75rem',
               }}
-                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#d63e0d' }}
-                onMouseLeave={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#e94e1b' }}>
+                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#B8922F' }}
+                onMouseLeave={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#C9A542' }}>
                 {sending ? (
                   <>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"

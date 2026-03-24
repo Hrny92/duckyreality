@@ -37,7 +37,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#001a29', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '4rem 0 2.5rem' }}>
+    <footer style={{ background: '#0A0A0A', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '4rem 0 2.5rem' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Top row */}
@@ -90,9 +90,9 @@ export default function Footer() {
                   transition: 'all 0.2s' }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.borderColor = '#e94e1b'
-                  el.style.color = '#e94e1b'
-                  el.style.background = 'rgba(233,78,27,0.08)'
+                  el.style.borderColor = '#C9A542'
+                  el.style.color = '#C9A542'
+                  el.style.background = 'rgba(201,165,66,0.08)'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLElement

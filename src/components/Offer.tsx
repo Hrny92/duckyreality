@@ -9,7 +9,7 @@ import {
 
 export default function Offer({ properties }: { properties: SanityProperty[] }) {
   return (
-    <section id="nabidka" style={{ background: '#002b40', padding: '8rem 0' }}>
+    <section id="nabidka" style={{ background: '#111111', padding: '8rem 0' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem' }}>
 
         {/* Header */}
@@ -17,7 +17,7 @@ export default function Offer({ properties }: { properties: SanityProperty[] }) 
           flexWrap: 'wrap', gap: '2rem', marginBottom: '5rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-              <div className="pulse" style={{ width: 6, height: 6, borderRadius: '50%', background: '#e94e1b' }} />
+              <div className="pulse" style={{ width: 6, height: 6, borderRadius: '50%', background: '#C9A542' }} />
               <span className="eyebrow" style={{ color: 'rgba(255,255,255,0.35)' }}>Moje nabídka</span>
             </div>
             <h2 className="display-md" style={{ color: '#fff' }}>
@@ -62,12 +62,12 @@ export default function Offer({ properties }: { properties: SanityProperty[] }) 
               Aktuálně připravuji nové nabídky. Napište mi — rád vám pomohu najít přesně to, co hledáte.
             </p>
             <button onClick={openContactModal}
-              style={{ background: '#e94e1b', color: '#fff', border: 'none',
+              style={{ background: '#C9A542', color: '#fff', border: 'none',
                 borderRadius: 999, padding: '0.75rem 2rem', cursor: 'pointer',
                 fontSize: '0.75rem', fontWeight: 800, letterSpacing: '0.1em',
                 textTransform: 'uppercase', transition: 'background 0.2s' }}
-              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#d63e0d'}
-              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#e94e1b'}>
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#B8922F'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#C9A542'}>
               Nezávazná poptávka
             </button>
           </div>
@@ -128,8 +128,8 @@ export default function Offer({ properties }: { properties: SanityProperty[] }) 
 
                   {/* Type pill */}
                   <div className="pill"
-                    style={{ background: p.transactionType === 'prodej' ? 'rgba(233,78,27,0.15)' : 'rgba(255,255,255,0.08)',
-                      color: p.transactionType === 'prodej' ? '#e94e1b' : 'rgba(255,255,255,0.5)',
+                    style={{ background: p.transactionType === 'prodej' ? 'rgba(201,165,66,0.15)' : 'rgba(255,255,255,0.08)',
+                      color: p.transactionType === 'prodej' ? '#C9A542' : 'rgba(255,255,255,0.5)',
                       flexShrink: 0 }}>
                     {transLabel}
                   </div>
@@ -176,12 +176,12 @@ export default function Offer({ properties }: { properties: SanityProperty[] }) 
             Hledáte něco jiného? Mám přístup k nabídkám, které nejsou veřejně inzerovány.
           </p>
           <button onClick={openContactModal}
-            style={{ border: '1px solid rgba(233,78,27,0.5)', color: '#e94e1b',
+            style={{ border: '1px solid rgba(201,165,66,0.5)', color: '#C9A542',
               fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.1em',
               textTransform: 'uppercase', padding: '0.875rem 2rem', background: 'transparent',
               borderRadius: 999, cursor: 'pointer', transition: 'all 0.25s' }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#e94e1b'; el.style.color='#fff' }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='transparent'; el.style.color='#e94e1b' }}>
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#C9A542'; el.style.color='#fff' }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='transparent'; el.style.color='#C9A542' }}>
             Nezávazná poptávka
           </button>
         </div>

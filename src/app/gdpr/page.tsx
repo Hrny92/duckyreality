@@ -11,11 +11,11 @@ export default function GdprPage() {
     <>
       {/* Navbar placeholder — just a back link on this standalone page */}
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        background: '#fff', borderBottom: '1px solid rgba(0,43,64,0.07)',
+        background: '#fff', borderBottom: '1px solid rgba(17,17,17,0.07)',
         padding: '1.25rem 2rem', display: 'flex', alignItems: 'center',
         justifyContent: 'space-between' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem',
-          textDecoration: 'none', color: '#002b40', fontSize: '0.75rem',
+          textDecoration: 'none', color: '#111111', fontSize: '0.75rem',
           fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M9 1L3 7l6 6" stroke="currentColor" strokeWidth="1.6"
@@ -35,26 +35,26 @@ export default function GdprPage() {
           {/* Header */}
           <div style={{ marginBottom: '3.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em',
-              textTransform: 'uppercase', color: '#e94e1b' }}>
+              textTransform: 'uppercase', color: '#C9A542' }}>
               GDPR
             </span>
             <h1 style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', fontWeight: 900,
-              letterSpacing: '-0.03em', lineHeight: 1.05, color: '#002b40',
+              letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111111',
               marginTop: '0.75rem' }}>
               Ochrana osobních&nbsp;údajů
             </h1>
-            <p style={{ marginTop: '1.25rem', fontSize: '0.9rem', color: 'rgba(0,43,64,0.5)',
+            <p style={{ marginTop: '1.25rem', fontSize: '0.9rem', color: 'rgba(17,17,17,0.5)',
               lineHeight: 1.75 }}>
               Informace o zpracování osobních údajů dle nařízení Evropského parlamentu a Rady (EU) 2016/679 (GDPR).
             </p>
           </div>
 
           {/* Divider */}
-          <div style={{ height: 1, background: 'rgba(0,43,64,0.1)', marginBottom: '3rem' }} />
+          <div style={{ height: 1, background: 'rgba(17,17,17,0.1)', marginBottom: '3rem' }} />
 
           {/* Content */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem',
-            fontSize: '0.9rem', lineHeight: 1.85, color: 'rgba(0,43,64,0.7)' }}>
+            fontSize: '0.9rem', lineHeight: 1.85, color: 'rgba(17,17,17,0.7)' }}>
 
             <section>
               <h2 style={h2}>1. Správce osobních údajů</h2>
@@ -63,8 +63,8 @@ export default function GdprPage() {
               </p>
               <div style={{ margin: '1rem 0', padding: '1.25rem 1.5rem',
                 background: '#fff', borderRadius: '0.75rem',
-                border: '1px solid rgba(0,43,64,0.08)' }}>
-                <strong style={{ color: '#002b40', display: 'block', marginBottom: '0.5rem' }}>
+                border: '1px solid rgba(17,17,17,0.08)' }}>
+                <strong style={{ color: '#111111', display: 'block', marginBottom: '0.5rem' }}>
                   Marek Ducký
                 </strong>
                 Sídlo podnikání: Býčkovice 31, 412 01, Česká republika<br/>
@@ -157,10 +157,10 @@ export default function GdprPage() {
 
           {/* Back link */}
           <div style={{ marginTop: '4rem', paddingTop: '2rem',
-            borderTop: '1px solid rgba(0,43,64,0.08)' }}>
+            borderTop: '1px solid rgba(17,17,17,0.08)' }}>
             <Link href="/"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                color: '#e94e1b', fontWeight: 700, fontSize: '0.8rem',
+                color: '#C9A542', fontWeight: 700, fontSize: '0.8rem',
                 letterSpacing: '0.08em', textTransform: 'uppercase', textDecoration: 'none' }}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M9 1L3 7l6 6" stroke="currentColor" strokeWidth="1.6"
@@ -177,14 +177,14 @@ export default function GdprPage() {
 
 // Reusable inline styles
 const h2: React.CSSProperties = {
-  fontSize: '1.05rem', fontWeight: 800, color: '#002b40',
+  fontSize: '1.05rem', fontWeight: 800, color: '#111111',
   letterSpacing: '-0.01em', marginBottom: '0.75rem',
 }
 const ul: React.CSSProperties = {
   paddingLeft: '1.25rem', marginTop: '0.5rem',
   display: 'flex', flexDirection: 'column', gap: '0.4rem',
 }
-const strong: React.CSSProperties = { color: '#002b40', fontWeight: 700 }
+const strong: React.CSSProperties = { color: '#111111', fontWeight: 700 }
 const link: React.CSSProperties = {
-  color: '#e94e1b', textDecoration: 'none', fontWeight: 600,
+  color: '#C9A542', textDecoration: 'none', fontWeight: 600,
 }

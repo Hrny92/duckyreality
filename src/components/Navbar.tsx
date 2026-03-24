@@ -37,14 +37,14 @@ export default function Navbar() {
   }, [open])
 
   // Barvy podle stavu scrollu
-  const linkColor     = scrolled ? '#002b40'              : 'rgba(255,255,255,0.85)'
-  const linkHover     = '#e94e1b'
-  const linkLeave     = scrolled ? '#002b40'              : 'rgba(255,255,255,0.85)'
-  const burgerColor   = scrolled ? '#002b40'              : '#ffffff'
-  const ctaBg         = scrolled ? '#e94e1b'              : 'rgba(255,255,255,0.15)'
+  const linkColor     = scrolled ? '#111111'              : 'rgba(255,255,255,0.85)'
+  const linkHover     = '#C9A542'
+  const linkLeave     = scrolled ? '#111111'              : 'rgba(255,255,255,0.85)'
+  const burgerColor   = scrolled ? '#111111'              : '#ffffff'
+  const ctaBg         = scrolled ? '#C9A542'              : 'rgba(255,255,255,0.15)'
   const ctaBorder     = scrolled ? 'none'                 : '1px solid rgba(255,255,255,0.35)'
   const ctaColor      = '#ffffff'
-  const ctaHoverBg    = scrolled ? '#d63e0d'              : 'rgba(255,255,255,0.25)'
+  const ctaHoverBg    = scrolled ? '#B8922F'              : 'rgba(255,255,255,0.25)'
   // Logo: originální barvy když je bílá navbar, bílé přes fotku
   const logoFilter    = scrolled ? 'none'                 : 'brightness(0) invert(1)'
 
@@ -161,7 +161,7 @@ export default function Navbar() {
         <div style={{
           position: 'absolute', bottom: '-10%', right: '-10%',
           width: '60vw', height: '60vw', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(233,78,27,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201,165,66,0.12) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
 

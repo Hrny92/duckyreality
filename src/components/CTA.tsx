@@ -4,18 +4,18 @@ import Reveal from '@/components/Reveal'
 
 export default function CTA() {
   return (
-    <section id="kontakt" style={{ background: '#002b40', padding: '10rem 0', position: 'relative', overflow: 'hidden' }}>
+    <section id="kontakt" style={{ background: '#111111', padding: '10rem 0', position: 'relative', overflow: 'hidden' }}>
       {/* Orange glow */}
       <div style={{ position: 'absolute', bottom: 0, right: '15%',
         width: 600, height: 600, borderRadius: '50%', pointerEvents: 'none',
-        background: 'radial-gradient(circle, rgba(233,78,27,0.12) 0%, transparent 70%)' }} />
+        background: 'radial-gradient(circle, rgba(201,165,66,0.12) 0%, transparent 70%)' }} />
 
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
 
         {/* Eyebrow */}
         <Reveal duration={600}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '3rem' }}>
-            <div className="pulse" style={{ width: 6, height: 6, borderRadius: '50%', background: '#e94e1b' }} />
+            <div className="pulse" style={{ width: 6, height: 6, borderRadius: '50%', background: '#C9A542' }} />
             <span className="eyebrow" style={{ color: 'rgba(255,255,255,0.3)' }}>Bezplatná konzultace</span>
           </div>
         </Reveal>
@@ -54,7 +54,7 @@ export default function CTA() {
                 </div>
                 <a href={c.href}
                   style={{ fontSize: '1rem', fontWeight: 600, color: '#fff', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#e94e1b'}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#C9A542'}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#fff'}>
                   {c.value}
                 </a>
@@ -66,13 +66,13 @@ export default function CTA() {
               <button onClick={openContactModal}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.875rem',
-                  background: '#e94e1b', color: '#fff', fontWeight: 800,
+                  background: '#C9A542', color: '#fff', fontWeight: 800,
                   fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase',
                   padding: '1.1rem 2.5rem', borderRadius: 999, border: 'none',
-                  cursor: 'pointer', transition: 'all 0.25s', boxShadow: '0 0 40px rgba(233,78,27,0.3)',
+                  cursor: 'pointer', transition: 'all 0.25s', boxShadow: '0 0 40px rgba(201,165,66,0.3)',
                 }}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#d63e0d'; el.style.transform='translateY(-2px)'; el.style.boxShadow='0 8px 50px rgba(233,78,27,0.5)' }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#e94e1b'; el.style.transform='translateY(0)'; el.style.boxShadow='0 0 40px rgba(233,78,27,0.3)' }}>
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background='#B8922F'; el.style.transform='translateY(-2px)'; el.style.boxShadow='0 8px 50px rgba(201,165,66,0.5)' }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background='#C9A542'; el.style.transform='translateY(0)'; el.style.boxShadow='0 0 40px rgba(201,165,66,0.3)' }}>
                 Napsat zprávu
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M1 8h14M8 1l7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>

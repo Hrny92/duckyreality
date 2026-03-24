@@ -53,9 +53,9 @@ export default function Testimonials() {
 
         {/* ── Header ── */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '5rem' }}>
-          <span className="eyebrow" style={{ color: '#e94e1b', flexShrink: 0 }}>Reference</span>
+          <span className="eyebrow" style={{ color: '#C9A542', flexShrink: 0 }}>Reference</span>
           <div className="h-rule" style={{ flexGrow: 1 }} />
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'rgba(0,43,64,0.35)',
+          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'rgba(17,17,17,0.35)',
             flexShrink: 0, letterSpacing: '0.05em' }}>
             {reviews.length} hodnocení
           </span>
@@ -66,13 +66,13 @@ export default function Testimonials() {
           {/* ── Levý panel — aktivní citace ── */}
           <div style={{ position: 'sticky', top: '7rem', alignSelf: 'start' }}>
             {/* Uvozovka */}
-            <div style={{ fontSize: '7rem', fontWeight: 900, color: '#e94e1b',
+            <div style={{ fontSize: '7rem', fontWeight: 900, color: '#C9A542',
               lineHeight: 0.8, marginBottom: '1.5rem', fontFamily: 'Georgia, serif',
               userSelect: 'none' }}>"</div>
 
             {/* Text */}
             <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', lineHeight: 1.7,
-              fontWeight: 500, color: '#002b40', letterSpacing: '-0.01em',
+              fontWeight: 500, color: '#111111', letterSpacing: '-0.01em',
               marginBottom: '2rem', minHeight: 180 }}>
               {r.text}
             </p>
@@ -80,20 +80,20 @@ export default function Testimonials() {
             {/* Autor */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <div style={{ width: 44, height: 44, borderRadius: '50%',
-                background: '#002b40', display: 'flex', alignItems: 'center',
+                background: '#111111', display: 'flex', alignItems: 'center',
                 justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700,
                 color: '#fff', flexShrink: 0 }}>
                 {initials(r.name)}
               </div>
               <div>
-                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#002b40' }}>{r.name}</div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(0,43,64,0.4)',
+                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#111111' }}>{r.name}</div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(17,17,17,0.4)',
                   fontWeight: 500, marginTop: '0.1rem' }}>{r.date}</div>
               </div>
               {/* Hvězdy */}
               <div style={{ display: 'flex', gap: 3, marginLeft: 'auto' }}>
                 {[1,2,3,4,5].map(s => (
-                  <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="#e94e1b">
+                  <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="#C9A542">
                     <path d="M7 1.5l1.5 3.5 3.8.5-2.8 2.6.7 3.8L7 10.1l-3.2 1.8.7-3.8-2.8-2.6 3.8-.5L7 1.5z"/>
                   </svg>
                 ))}
@@ -103,28 +103,28 @@ export default function Testimonials() {
             {/* Šipky */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <button onClick={() => go(-1)} disabled={active === 0}
-                style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(0,43,64,0.15)',
+                style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(17,17,17,0.15)',
                   background: 'none', cursor: active === 0 ? 'default' : 'pointer', display: 'flex',
                   alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s',
-                  opacity: active === 0 ? 0.25 : 1, color: '#002b40' }}
-                onMouseEnter={e => { if (active > 0) { (e.currentTarget as HTMLElement).style.background='#002b40'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='#002b40' }}>
+                  opacity: active === 0 ? 0.25 : 1, color: '#111111' }}
+                onMouseEnter={e => { if (active > 0) { (e.currentTarget as HTMLElement).style.background='#111111'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='#111111' }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M9 1L3 7l6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               <button onClick={() => go(1)} disabled={active === reviews.length - 1}
-                style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(0,43,64,0.15)',
+                style={{ width: 40, height: 40, borderRadius: '50%', border: '1px solid rgba(17,17,17,0.15)',
                   background: 'none', cursor: active === reviews.length - 1 ? 'default' : 'pointer',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s',
-                  opacity: active === reviews.length - 1 ? 0.25 : 1, color: '#002b40' }}
-                onMouseEnter={e => { if (active < reviews.length - 1) { (e.currentTarget as HTMLElement).style.background='#002b40'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='#002b40' }}>
+                  opacity: active === reviews.length - 1 ? 0.25 : 1, color: '#111111' }}
+                onMouseEnter={e => { if (active < reviews.length - 1) { (e.currentTarget as HTMLElement).style.background='#111111'; (e.currentTarget as HTMLElement).style.color='#fff' }}}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background='none'; (e.currentTarget as HTMLElement).style.color='#111111' }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M5 1l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'rgba(0,43,64,0.3)',
+              <span style={{ fontSize: '0.72rem', fontWeight: 600, color: 'rgba(17,17,17,0.3)',
                 marginLeft: '0.5rem', letterSpacing: '0.05em' }}>
                 {active + 1} / {reviews.length}
               </span>
@@ -136,25 +136,25 @@ export default function Testimonials() {
           <div
             ref={listRef}
             style={{ position: 'absolute', inset: 0, overflowY: 'auto', paddingRight: '0.5rem',
-              scrollbarWidth: 'thin', scrollbarColor: 'rgba(0,43,64,0.2) transparent' }}>
+              scrollbarWidth: 'thin', scrollbarColor: 'rgba(17,17,17,0.2) transparent' }}>
             {reviews.map((rev, i) => (
               <button key={i} onClick={() => setActive(i)}
                 style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center',
                   gap: '1rem', width: '100%', padding: '1.1rem 0',
-                  borderBottom: '1px solid rgba(0,43,64,0.06)',
+                  borderBottom: '1px solid rgba(17,17,17,0.06)',
                   transition: 'background 0.15s', boxSizing: 'border-box' }}>
 
                 {/* Aktivní indikátor */}
                 <div style={{ width: 3, height: 32, borderRadius: 2, flexShrink: 0,
-                  background: i === active ? '#e94e1b' : 'transparent',
+                  background: i === active ? '#C9A542' : 'transparent',
                   transition: 'background 0.25s' }} />
 
                 {/* Iniciály */}
                 <div style={{ width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
-                  background: i === active ? '#002b40' : 'rgba(0,43,64,0.07)',
+                  background: i === active ? '#111111' : 'rgba(17,17,17,0.07)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '0.65rem', fontWeight: 700, transition: 'all 0.25s',
-                  color: i === active ? '#fff' : 'rgba(0,43,64,0.4)' }}>
+                  color: i === active ? '#fff' : 'rgba(17,17,17,0.4)' }}>
                   {initials(rev.name)}
                 </div>
 
@@ -162,12 +162,12 @@ export default function Testimonials() {
                 <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
                   <div style={{ fontSize: '0.85rem', fontWeight: 700, whiteSpace: 'nowrap',
                     overflow: 'hidden', textOverflow: 'ellipsis',
-                    color: i === active ? '#002b40' : 'rgba(0,43,64,0.45)',
+                    color: i === active ? '#111111' : 'rgba(17,17,17,0.45)',
                     transition: 'color 0.25s' }}>
                     {rev.name}
                   </div>
                   <div style={{ fontSize: '0.7rem', fontWeight: 500, marginTop: '0.1rem',
-                    color: i === active ? 'rgba(0,43,64,0.45)' : 'rgba(0,43,64,0.25)',
+                    color: i === active ? 'rgba(17,17,17,0.45)' : 'rgba(17,17,17,0.25)',
                     transition: 'color 0.25s' }}>
                     {rev.date}
                   </div>
@@ -177,7 +177,7 @@ export default function Testimonials() {
                 <div style={{ display: 'flex', gap: 2, flexShrink: 0,
                   opacity: i === active ? 1 : 0.3, transition: 'opacity 0.25s' }}>
                   {[1,2,3,4,5].map(s => (
-                    <svg key={s} width="10" height="10" viewBox="0 0 14 14" fill="#e94e1b">
+                    <svg key={s} width="10" height="10" viewBox="0 0 14 14" fill="#C9A542">
                       <path d="M7 1.5l1.5 3.5 3.8.5-2.8 2.6.7 3.8L7 10.1l-3.2 1.8.7-3.8-2.8-2.6 3.8-.5L7 1.5z"/>
                     </svg>
                   ))}
@@ -190,12 +190,12 @@ export default function Testimonials() {
 
         {/* ── Spodní stats ── */}
         <div style={{ display: 'flex', gap: '3rem', paddingTop: '4rem',
-          marginTop: '4rem', borderTop: '1px solid rgba(0,43,64,0.07)' }}>
+          marginTop: '4rem', borderTop: '1px solid rgba(17,17,17,0.07)' }}>
           {[['98%','spokojenost klientů'], ['150+','úspěšných obchodů'], ['25','ověřených recenzí']].map(([n,l]) => (
             <div key={l}>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#002b40',
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#111111',
                 letterSpacing: '-0.03em', lineHeight: 1 }}>{n}</div>
-              <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(0,43,64,0.35)',
+              <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(17,17,17,0.35)',
                 textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '0.3rem' }}>{l}</div>
             </div>
           ))}
