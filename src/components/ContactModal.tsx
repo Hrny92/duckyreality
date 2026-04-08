@@ -45,7 +45,7 @@ export default function ContactModal() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSending(true)
-    await new Promise(r => setTimeout(r, 900)) // simulace odeslání — napojit na reálný endpoint
+    await new Promise(r => setTimeout(r, 900))
     setSending(false)
     setSent(true)
   }
@@ -58,8 +58,8 @@ export default function ContactModal() {
       onClick={e => { if (e.target === overlayRef.current) close() }}
       style={{
         position: 'fixed', inset: 0, zIndex: 1000,
-        background: 'rgba(0,26,41,0.75)',
-        backdropFilter: 'blur(8px)',
+        background: 'rgba(0,0,0,0.85)',
+        backdropFilter: 'blur(12px)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: '1.5rem',
         animation: 'fadeIn 0.2s ease',
@@ -67,34 +67,76 @@ export default function ContactModal() {
     >
       <style>{`
         @keyframes fadeIn  { from { opacity: 0 } to { opacity: 1 } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: translateY(0) } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(28px) } to { opacity: 1; transform: translateY(0) } }
+        @keyframes spin    { to { transform: rotate(360deg) } }
         .modal-input {
-          width: 100%; background: rgba(17,17,17,0.04); border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 0.75rem; padding: 0.875rem 1rem; font-size: 0.9rem;
-          color: #111111; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+          width: 100%;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 0.75rem;
+          padding: 0.875rem 1rem;
+          font-size: 0.9rem;
+          color: #fff;
+          outline: none;
+          transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
           font-family: inherit;
+          box-sizing: border-box;
         }
-        .modal-input:focus { border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,175,55,0.1); }
-        .modal-input::placeholder { color: rgba(255,255,255,0.3); }
+        .modal-input:focus {
+          border-color: #D4AF37;
+          box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+          background: rgba(255,255,255,0.07);
+        }
+        .modal-input::placeholder { color: rgba(255,255,255,0.25); }
+        textarea.modal-input { resize: vertical; min-height: 110px; }
       `}</style>
 
       {/* Dialog */}
       <div style={{
-        background: '#fff', borderRadius: '2rem', width: '100%', maxWidth: 560,
-        padding: '3rem', position: 'relative', boxShadow: '0 40px 80px rgba(0,0,0,0.3)',
-        animation: 'slideUp 0.25s ease',
-        maxHeight: '90vh', overflowY: 'auto',
+        background: '#111111',
+        border: '1px solid rgba(255,255,255,0.08)',
+        borderRadius: '1.75rem',
+        width: '100%',
+        maxWidth: 560,
+        padding: '2.75rem',
+        position: 'relative',
+        boxShadow: '0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)',
+        animation: 'slideUp 0.28s ease',
+        maxHeight: '90vh',
+        overflowY: 'auto',
       }}>
 
+        {/* Gold accent line at top */}
+        <div style={{
+          position: 'absolute', top: 0, left: '2.75rem', right: '2.75rem',
+          height: 2, background: 'linear-gradient(90deg, transparent, #D4AF37 40%, #E8CC6A 60%, transparent)',
+          borderRadius: '0 0 2px 2px',
+        }} />
+
         {/* Zavřít */}
-        <button onClick={close} style={{
-          position: 'absolute', top: '1.5rem', right: '1.5rem',
-          width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(17,17,17,0.1)',
-          background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center',
-          justifyContent: 'center', color: 'rgba(255,255,255,0.4)', transition: 'all 0.2s',
-        }}
-          onMouseEnter={e => { const el = e.currentTarget; el.style.background='#111111'; el.style.color='#fff'; el.style.borderColor='#111111' }}
-          onMouseLeave={e => { const el = e.currentTarget; el.style.background='none'; el.style.color='rgba(255,255,255,0.4)'; el.style.borderColor='rgba(17,17,17,0.1)' }}
+        <button
+          onClick={close}
+          style={{
+            position: 'absolute', top: '1.5rem', right: '1.5rem',
+            width: 36, height: 36, borderRadius: '50%',
+            border: '1px solid rgba(255,255,255,0.12)',
+            background: 'rgba(255,255,255,0.05)',
+            cursor: 'pointer', display: 'flex', alignItems: 'center',
+            justifyContent: 'center', color: 'rgba(255,255,255,0.4)',
+            transition: 'all 0.2s',
+          }}
+          onMouseEnter={e => {
+            const el = e.currentTarget
+            el.style.background = 'rgba(212,175,55,0.15)'
+            el.style.borderColor = 'rgba(212,175,55,0.4)'
+            el.style.color = '#D4AF37'
+          }}
+          onMouseLeave={e => {
+            const el = e.currentTarget
+            el.style.background = 'rgba(255,255,255,0.05)'
+            el.style.borderColor = 'rgba(255,255,255,0.12)'
+            el.style.color = 'rgba(255,255,255,0.4)'
+          }}
           aria-label="Zavřít"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -105,25 +147,35 @@ export default function ContactModal() {
         {sent ? (
           /* ── Potvrzení odeslání ── */
           <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-            <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(212,175,55,0.1)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
+            <div style={{
+              width: 68, height: 68, borderRadius: '50%',
+              background: 'rgba(212,175,55,0.1)',
+              border: '1px solid rgba(212,175,55,0.3)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              margin: '0 auto 1.5rem',
+            }}>
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <path d="M5 14l6 6L23 8" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#111111',
-              letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>Zpráva odeslána!</h3>
-            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+            <h3 style={{
+              fontSize: '1.4rem', fontWeight: 900, color: '#fff',
+              letterSpacing: '-0.02em', marginBottom: '0.75rem',
+            }}>
+              Zpráva odeslána!
+            </h3>
+            <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '2rem' }}>
               Děkuji za váš zájem. Ozvu se vám co nejdříve, obvykle do 24 hodin.
             </p>
             <button onClick={close} style={{
-              background: '#D4AF37', color: '#fff', fontWeight: 700,
+              background: '#D4AF37', color: '#0A0A0A', fontWeight: 800,
               fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase',
               padding: '0.875rem 2rem', borderRadius: 999, border: 'none', cursor: 'pointer',
               transition: 'background 0.2s',
             }}
-              onMouseEnter={e => (e.currentTarget.style.background='#B8960D')}
-              onMouseLeave={e => (e.currentTarget.style.background='#D4AF37')}>
+              onMouseEnter={e => (e.currentTarget.style.background = '#E8CC6A')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#D4AF37')}
+            >
               Zavřít
             </button>
           </div>
@@ -134,17 +186,20 @@ export default function ContactModal() {
             <div style={{ marginBottom: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                 <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#D4AF37' }} />
-                <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em',
-                  textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)' }}>
+                <span style={{
+                  fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em',
+                  textTransform: 'uppercase', color: '#D4AF37',
+                }}>
                   Bezplatná konzultace
                 </span>
               </div>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 900,
-                color: '#111111', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+              <h2 style={{
+                fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 900,
+                color: '#fff', letterSpacing: '-0.03em', lineHeight: 1.1,
+              }}>
                 Napište mi.
               </h2>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)',
-                lineHeight: 1.6 }}>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.6 }}>
                 Ozveme se vám do 24 hodin. Bez závazků.
               </p>
             </div>
@@ -153,16 +208,20 @@ export default function ContactModal() {
               {/* Jméno + telefon */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)',
-                    letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                  <label style={{
+                    fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)',
+                    letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem',
+                  }}>
                     Jméno *
                   </label>
                   <input ref={firstRef} required className="modal-input" type="text"
                     placeholder="Jan Novák" value={fields.name} onChange={set('name')} />
                 </div>
                 <div>
-                  <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)',
-                    letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                  <label style={{
+                    fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)',
+                    letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem',
+                  }}>
                     Telefon
                   </label>
                   <input className="modal-input" type="tel"
@@ -172,8 +231,10 @@ export default function ContactModal() {
 
               {/* E-mail */}
               <div>
-                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)',
-                  letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                <label style={{
+                  fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)',
+                  letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem',
+                }}>
                   E-mail *
                 </label>
                 <input required className="modal-input" type="email"
@@ -182,35 +243,39 @@ export default function ContactModal() {
 
               {/* Zpráva */}
               <div>
-                <label style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)',
-                  letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                <label style={{
+                  fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)',
+                  letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem',
+                }}>
                   Zpráva *
                 </label>
                 <textarea required className="modal-input" rows={4}
                   placeholder="Čím vám mohu pomoci?" value={fields.message}
-                  onChange={set('message')}
-                  style={{ resize: 'vertical', minHeight: 110 }} />
+                  onChange={set('message')} />
               </div>
 
               {/* Odeslat */}
-              <button type="submit" disabled={sending} style={{
-                background: sending ? 'rgba(212,175,55,0.6)' : '#D4AF37',
-                color: '#fff', fontWeight: 800, fontSize: '0.8rem',
-                letterSpacing: '0.1em', textTransform: 'uppercase',
-                padding: '1rem 2rem', borderRadius: 999, border: 'none',
-                cursor: sending ? 'not-allowed' : 'pointer', marginTop: '0.5rem',
-                transition: 'all 0.2s', display: 'flex', alignItems: 'center',
-                justifyContent: 'center', gap: '0.75rem',
-              }}
-                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#B8960D' }}
-                onMouseLeave={e => { if (!sending) (e.currentTarget as HTMLElement).style.background='#D4AF37' }}>
+              <button
+                type="submit"
+                disabled={sending}
+                style={{
+                  background: sending ? 'rgba(212,175,55,0.5)' : '#D4AF37',
+                  color: '#0A0A0A', fontWeight: 800, fontSize: '0.8rem',
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  padding: '1rem 2rem', borderRadius: 999, border: 'none',
+                  cursor: sending ? 'not-allowed' : 'pointer', marginTop: '0.5rem',
+                  transition: 'all 0.2s', display: 'flex', alignItems: 'center',
+                  justifyContent: 'center', gap: '0.75rem',
+                }}
+                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLElement).style.background = '#E8CC6A' }}
+                onMouseLeave={e => { if (!sending) (e.currentTarget as HTMLElement).style.background = '#D4AF37' }}
+              >
                 {sending ? (
                   <>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                       style={{ animation: 'spin 0.8s linear infinite' }}>
-                      <style>{'@keyframes spin{to{transform:rotate(360deg)}}'}</style>
-                      <circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
-                      <path d="M8 2a6 6 0 016 6" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="8" cy="8" r="6" stroke="rgba(0,0,0,0.3)" strokeWidth="2"/>
+                      <path d="M8 2a6 6 0 016 6" stroke="#0A0A0A" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
                     Odesílám…
                   </>

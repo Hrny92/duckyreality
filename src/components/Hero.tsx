@@ -111,7 +111,7 @@ export default function Hero() {
             marginBottom: '2.5rem',
           }}
         >
-          <span className="orange-word">Ducký.</span>
+          <span className="orange-word">Ducký</span>
         </h1>
 
         {/* ── Spodní lišta — delay 620ms ── */}

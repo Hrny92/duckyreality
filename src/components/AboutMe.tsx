@@ -79,7 +79,7 @@ export default function AboutMe() {
             <div style={{ paddingTop: '1rem' }}>
               <h2 className="display-md" style={{ color: '#fff', marginBottom: '2rem' }}>
                 Makléř,&nbsp;<br />
-                <span className="orange-word">kterému záleží.</span>
+                <span className="orange-word">kterému na vás záleží</span>
               </h2>
 
               <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.6)',

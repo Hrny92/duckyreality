@@ -27,7 +27,7 @@ export default function WhyMe() {
         <Reveal delay={100}>
           <h2 className="display-md" style={{ color: '#fff', marginBottom: '5rem', maxWidth: 700 }}>
             Šest důvodů,<br/>
-            <span className="orange-word">proč vybrat si mě.</span>
+            <span className="orange-word">proč vybrat si mě</span>
           </h2>
         </Reveal>
 
