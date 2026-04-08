@@ -163,7 +163,7 @@ export default function Testimonials() {
                 <div style={{ flex: 1, minWidth: 0, textAlign: 'left' }}>
                   <div style={{ fontSize: '0.85rem', fontWeight: 700, whiteSpace: 'nowrap',
                     overflow: 'hidden', textOverflow: 'ellipsis',
-                    color: i === active ? '#111111' : 'rgba(255,255,255,0.4)',
+                    color: i === active ? '#D4AF37' : 'rgba(255,255,255,0.4)',
                     transition: 'color 0.25s' }}>
                     {rev.name}
                   </div>
