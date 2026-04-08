@@ -23,10 +23,10 @@ function PortableText({ blocks }: { blocks: unknown[] }) {
 
         const base: React.CSSProperties = {
           fontSize: '0.95rem', lineHeight: 1.85,
-          color: 'rgba(17,17,17,0.7)', fontWeight: 400,
+          color: 'rgba(255,255,255,0.6)', fontWeight: 400,
         }
-        if (style === 'h2') return <h2 key={i} style={{ ...base, fontSize: '1.4rem', fontWeight: 800, color: '#111111', letterSpacing: '-0.02em' }}>{text}</h2>
-        if (style === 'h3') return <h3 key={i} style={{ ...base, fontSize: '1.1rem', fontWeight: 700, color: '#111111' }}>{text}</h3>
+        if (style === 'h2') return <h2 key={i} style={{ ...base, fontSize: '1.4rem', fontWeight: 800, color: 'rgba(255,255,255,0.9)', letterSpacing: '-0.02em' }}>{text}</h2>
+        if (style === 'h3') return <h3 key={i} style={{ ...base, fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{text}</h3>
         return <p key={i} style={base}>{text}</p>
       })}
     </div>
@@ -156,7 +156,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
         )}
         {/* Gradient overlay bottom */}
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '50%',
-          background: 'linear-gradient(to top, rgba(0,27,40,0.85), transparent)',
+          background: 'linear-gradient(to top, rgba(10,10,10,0.9), transparent)',
           pointerEvents: 'none' }} />
         {/* Back link */}
         <Link href="/nemovitosti"
@@ -183,7 +183,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
       </div>
 
       {/* ── CONTENT ───────────────────────────────────────── */}
-      <main style={{ background: '#f4f3f0', paddingBottom: '8rem' }}>
+      <main style={{ background: '#0A0A0A', paddingBottom: '8rem' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
 
           {/* ── TITLE + PRICE HEADER ─────────────── */}
@@ -211,14 +211,14 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                 </span>
               </div>
               <h1 style={{ fontSize: 'clamp(1.8rem,4vw,3rem)', fontWeight: 900,
-                letterSpacing: '-0.03em', lineHeight: 1.05, color: '#111111' }}>
+                letterSpacing: '-0.03em', lineHeight: 1.05, color: '#fff' }}>
                 {p.title}
               </h1>
             </div>
 
             <div style={{ textAlign: 'right', flexShrink: 0 }}>
               <div style={{ fontSize: 'clamp(1.5rem,3vw,2.2rem)', fontWeight: 900,
-                color: '#111111', letterSpacing: '-0.03em',
+                color: '#fff', letterSpacing: '-0.03em',
                 opacity: p.status === 'sold' ? 0.35 : 1 }}>
                 {p.price}
               </div>
@@ -250,7 +250,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                     textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.3rem' }}>
                     {s.label}
                   </div>
-                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#111111',
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff',
                     letterSpacing: '-0.01em' }}>
                     {s.value}
                   </div>
@@ -340,7 +340,7 @@ export default function PropertyDetail({ property: p }: { property: SanityProper
                           color: 'rgba(255,255,255,0.3)', letterSpacing: '0.04em' }}>
                           {row.label}
                         </span>
-                        <span style={{ fontSize: '0.85rem', color: '#111111',
+                        <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.75)',
                           fontWeight: 500, lineHeight: 1.6 }}>
                           {row.value}
                         </span>
@@ -465,7 +465,7 @@ function ShareButton({ title }: { title: string }) {
   return (
     <button onClick={copy}
       style={{ marginTop: '1rem', width: '100%', background: 'none',
-        border: '1px solid rgba(17,17,17,0.1)', borderRadius: 999,
+        border: '1px solid rgba(255,255,255,0.1)', borderRadius: 999,
         padding: '0.65rem 1rem', fontSize: '0.72rem', fontWeight: 700,
         color: copied ? '#4ade80' : 'rgba(255,255,255,0.4)', cursor: 'pointer',
         letterSpacing: '0.06em', textTransform: 'uppercase', transition: 'all 0.2s',
