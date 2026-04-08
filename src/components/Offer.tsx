@@ -22,7 +22,7 @@ export default function Offer({ properties }: { properties: SanityProperty[] }) 
             </div>
             <h2 className="display-md" style={{ color: '#fff' }}>
               Aktuální<br/>
-              <span className="orange-word">nemovitosti.</span>
+              <span className="orange-word">nemovitosti</span>
             </h2>
           </div>
           <Link href="/nemovitosti" className="hover-arrow"
