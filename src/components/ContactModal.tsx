@@ -45,9 +45,19 @@ export default function ContactModal() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSending(true)
-    await new Promise(r => setTimeout(r, 900))
-    setSending(false)
-    setSent(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      })
+      if (!res.ok) throw new Error('Chyba při odesílání')
+      setSent(true)
+    } catch {
+      alert('Nepodařilo se odeslat zprávu. Zkuste to prosím znovu nebo volejte přímo.')
+    } finally {
+      setSending(false)
+    }
   }
 
   if (!open) return null
