@@ -37,22 +37,7 @@ export default function AboutMe() {
                 }}
               />
 
-              {/* Badge vpravo nahoře */}
-              <div
-                style={{
-                  position: 'absolute', top: '1.25rem', right: '1.25rem', zIndex: 2,
-                  background: 'rgba(17,17,17,0.88)', backdropFilter: 'blur(12px)',
-                  color: '#fff', borderRadius: '1rem', padding: '0.875rem 1.25rem',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-                }}
-              >
-                <div style={{ fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.15em',
-                  textTransform: 'uppercase', opacity: 0.5, marginBottom: '0.5rem' }}>
-                  Realitní makléř
-                </div>
-                <img src="/Bidli-logo-wh.svg" alt="Bidli"
-                  style={{ height: 18, width: 'auto', display: 'block', opacity: 0.9 }} />
-              </div>
+              
 
               {/* Badge vlevo dole — counter "12+" */}
               <div
