@@ -17,9 +17,9 @@ export const BROKER = {
   region:    'Ústecký kraj',
   country:   'CZ',
   area:      'Litoměřicko · Praha · celá ČR',
-  instagram: 'https://www.instagram.com/marek_ducky',
-  facebook:  'https://www.facebook.com/marekducky',
-  linkedin:  'https://www.linkedin.com/in/marek-ducky',
+  instagram: 'https://www.instagram.com/marekducky/',
+  facebook:  'https://www.facebook.com/profile.php?id=61567288976002',
+  youtube:   'https://www.youtube.com/@marekducky8034',
   photo:     `${SITE_URL}/Ducky.png`,
 }
 
