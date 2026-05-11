@@ -76,7 +76,7 @@ export function personSchema() {
     sameAs: [
       BROKER.instagram,
       BROKER.facebook,
-      BROKER.linkedin,
+      BROKER.youtube,
     ],
     worksFor: {
       '@id': `${SITE_URL}/#organization`,
@@ -153,7 +153,7 @@ export function localBusinessSchema() {
     sameAs: [
       BROKER.instagram,
       BROKER.facebook,
-      BROKER.linkedin,
+      BROKER.youtube,
       'https://www.bidli.cz',
     ],
     founder: {
